@@ -1,15 +1,20 @@
-import HeroBanner from "./HeroBanner";
 import WhyBM from "./WhyBM";
 import ContactForm from "./ContactForm";
 import HeroCarousel from "./HeroCarousel";
+import ProjectsShowcase from "./ProjectsShowcase";
+import InspirationSection from "./InspirationSection";
 
 function Home() {
-    return(<div className="bg-gray-50 text-gray-900">
-        <main>
-         <HeroCarousel />
-          <WhyBM />
-          <ContactForm />
-        </main>
-      </div>)
+  return (
+    <div className="text-gray-900">
+      <main>
+        <HeroCarousel />
+        <WhyBM />
+        <ProjectsShowcase />
+        <InspirationSection />
+        <ContactForm />
+      </main>
+    </div>
+  );
 }
-export default Home
+export default Home;
