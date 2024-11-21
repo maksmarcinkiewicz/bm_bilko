@@ -86,9 +86,14 @@ function ProjectsShowcase() {
 
       {/* Kafelki z ofertą */}
       <div className="w-full px-0 mt-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-2">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-1 lg:gap-2">
           {offers.map((offer, index) => (
-            <div key={index} className="relative group h-64 overflow-hidden">
+            <div
+              key={index}
+              className={`relative group h-64 overflow-hidden ${
+                index === offers.length - 1 ? "col-span-2 lg:col-span-3" : ""
+              }`}
+            >
               <img
                 src={offer.image}
                 alt={offer.title}

@@ -6,7 +6,7 @@ function ContactSection() {
         <div className="w-full lg:w-1/2 mb-8 lg:mb-0 lg:pr-8">
           <div className="relative">
             <img
-              src="https://via.placeholder.com/600x400?text=Biuro+Kontaktowe"
+              src="https://lh3.googleusercontent.com/p/AF1QipPsFn_LrgHwsewD-Lus6-3VMJScWv6bVT_CzLwF=s680-w680-h510"
               alt="Zdjęcie biura"
               className="rounded-lg shadow-lg w-full"
             />

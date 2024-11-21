@@ -89,7 +89,7 @@ function HeroCarousel() {
         </Swiper>
       </section>
       {/* Customowa nawigacja */}
-      <div className="navigation-buttons flex justify-center space-x-8 border-b border-gray-300 pt-6 px-4">
+      <div className="navigation-buttons flex justify-center space-x-2 border-b border-gray-300 pt-6 text-xs px-4">
         {slides.map((slide, index) => (
           <button
             key={index}
