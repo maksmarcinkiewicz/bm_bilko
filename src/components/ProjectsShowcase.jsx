@@ -3,87 +3,59 @@ import "swiper/css";
 
 function ProjectsShowcase() {
   const realizations = [
-    "https://via.placeholder.com/500x200?text=Realizacja+1",
-    "https://via.placeholder.com/500x200?text=Realizacja+2",
-    "https://via.placeholder.com/500x200?text=Realizacja+3",
-    "https://via.placeholder.com/500x200?text=Realizacja+4",
+    "https://www.winart.com.pl/assets/1-xFLK_-XZ.jpg",
+    "https://www.winart.com.pl/assets/2-jfyQXQG0.jpg",
+    "https://www.winart.com.pl/assets/3-XqjfoUkc.jpg",
+    "https://www.winart.com.pl/assets/5-8hP6LR54.jpg",
+    "https://www.winart.com.pl/assets/7-fXMZYDEe.jpg",
   ];
 
   const offers = [
     {
       title: "Okna",
-      image: "https://via.placeholder.com/150?text=Okna",
+      image: "https://sklep.wisniowski.pl/img/layout/Okna.webp",
     },
     {
       title: "Bramy garażowe",
-      image: "https://via.placeholder.com/150?text=Bramy+gara%C5%BCowe",
+      image: "https://sklep.wisniowski.pl/img/layout/Bramy-garazowe.webp",
     },
     {
       title: "Drzwi zewnętrzne",
-      image: "https://via.placeholder.com/150?text=Drzwi+zewn%C4%99trzne",
+      image: "https://sklep.wisniowski.pl/img/layout/Drzwi.webp",
     },
     {
       title: "Rolety i żaluzje",
-      image: "https://via.placeholder.com/150?text=Rolety+i+%C5%BCaluzje",
+      image:
+        "https://www.wisniowski.pl/api/preview/8f/8fa81bcd-b892-4c05-903a-e47fad01ddb3.jpg?w=1920&q=75",
     },
     {
       title: "Ogrodzenia",
-      image: "https://via.placeholder.com/150?text=Ogrodzenia",
+      image: "https://sklep.wisniowski.pl/img/layout/Ogrodzenia.webp",
     },
     {
       title: "Bramy przemysłowe",
-      image: "https://via.placeholder.com/150?text=Bramy+przemys%C5%82owe",
+      image:
+        "https://www.wisniowski.pl/api/preview/d8/d899c00b-9a9e-43d9-95bf-132a5a3a199e.jpg?w=1920&q=75",
     },
     {
       title: "Ogrodzenia przemysłowe",
-      image: "https://via.placeholder.com/150?text=Ogrodzenia+przemys%C5%82owe",
+      image:
+        "https://www.wisniowski.pl/api/preview/8f/8fa81bcd-b892-4c05-903a-e47fad01ddb3.jpg?w=1920&q=75",
     },
     {
       title: "Ogrody zimowe i przeszklenia aluminiowe",
-      image: "https://via.placeholder.com/150?text=Ogrody+zimowe",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPDg9kE8qomE9VAtW5uDqe2zVxEj447rG9NA&s",
     },
     {
       title: "Inteligentny dom",
-      image: "https://via.placeholder.com/150?text=Inteligentny+dom",
+      image:
+        "https://www.wisniowski.pl/api/preview/51/51ce72e5-36fc-48b5-a1aa-1b9c56ad4a92.jpg?w=3840&q=100",
     },
   ];
 
   return (
     <section className="pt-12 bg-gray-100">
-      {/* Sekcja realizacji */}
-      <div className="w-full px-0">
-        <h2 className="text-2xl md:text-4xl font-bold text-center mb-8">
-          Nasze Realizacje
-        </h2>
-        <Swiper
-          spaceBetween={20}
-          slidesPerView={1} // Domyślnie 1 slajd
-          loop={true}
-          pagination={{
-            clickable: true, // Dodaj klikalne kropeczki
-          }}
-          breakpoints={{
-            // Konfiguracja dla różnych rozdzielczości ekranu
-            768: {
-              slidesPerView: 2, // Dwa slajdy na średnich ekranach
-            },
-            1024: {
-              slidesPerView: 3, // Trzy slajdy na dużych ekranach
-            },
-          }}
-        >
-          {realizations.map((url, index) => (
-            <SwiperSlide key={index}>
-              <img
-                src={url}
-                alt={`Realizacja ${index + 1}`}
-                className="w-full rounded-lg shadow-lg"
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-
       {/* Kafelki z ofertą */}
       <div className="w-full px-0 mt-12">
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-1 lg:gap-2">

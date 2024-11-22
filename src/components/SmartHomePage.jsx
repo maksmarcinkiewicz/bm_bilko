@@ -5,22 +5,25 @@ const SmartHomePage = () => {
   const products = [
     {
       title: "Brama garażowa",
-      image: "/images/garage_door.jpg",
+      image: "https://sklep.wisniowski.pl/img/products/38/85/8_org.jpg",
       description: "Bramy segmentowe z napędem SPARK lub METRO Smart io.",
     },
     {
       title: "Drzwi zewnętrzne",
-      image: "/images/exterior_door.jpg",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpwbXzyDe_PydOBOFVe8VJ8C2BTpK2oAwZ1g&s",
       description: "Drzwi z zamkiem Autotronic i integracją Smart io.",
     },
     {
       title: "Rolety okienne",
-      image: "/images/window_shutter.jpg",
+      image:
+        "https://www.ikea.com/pl/pl/images/products/praktlysing-roleta-smart-bezprzewodowy-na-baterie-bialy__0981011_pe815230_s5.jpg?f=s",
       description: "Rolety sterowane centralą Rollixo Smart io.",
     },
     {
       title: "Drzwi tarasowe HST",
-      image: "/images/hst_door.jpg",
+      image:
+        "https://www.aluplast.com.pl/images/image-576x591/catalog/2482/aluplast-hst-mob_63af540d32ac97_17511315.jpg.jpg",
       description: "Eleganckie drzwi z pełną integracją z aplikacją.",
     },
   ];
@@ -46,7 +49,7 @@ const SmartHomePage = () => {
           </div>
           <div>
             <img
-              src="/images/tahoma_switch.jpg"
+              src="https://www.wisniowski.pl/api/preview/c6/c62f3295-7e77-45d1-a48c-fa03d590fcef.png?w=1080&q=95"
               alt="TaHoma Switch"
               className="w-full rounded-lg shadow-md"
             />
@@ -122,11 +125,15 @@ const SmartHomePage = () => {
             Zobacz, jak SmartConnected może zmienić Twój dom na bardziej
             komfortowy i bezpieczny.
           </p>
-          <video
-            src="/videos/smartconnected.mp4"
-            controls
+          <iframe
             className="w-full max-w-3xl mx-auto rounded-lg shadow-lg"
-          ></video>
+            style={{ aspectRatio: "16 / 9" }}
+            src="https://www.youtube.com/embed/nOLVEo00upc" // Przykładowy ID filmu
+            title="Wiśniowski SmartConnected Video"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </div>
       </section>
     </div>

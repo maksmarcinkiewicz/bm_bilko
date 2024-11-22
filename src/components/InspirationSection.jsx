@@ -1,10 +1,10 @@
 function InspirationSection() {
   const images = [
-    "https://via.placeholder.com/300x400?text=Zdjęcie+1",
-    "https://via.placeholder.com/300x400?text=Zdjęcie+2",
-    "https://via.placeholder.com/300x400?text=Zdjęcie+3",
-    "https://via.placeholder.com/300x400?text=Zdjęcie+4",
-    "https://via.placeholder.com/300x400?text=Zdjęcie+5",
+    "https://www.winart.com.pl/assets/1-xFLK_-XZ.jpg",
+    "https://www.winart.com.pl/assets/2-jfyQXQG0.jpg",
+    "https://www.winart.com.pl/assets/3-XqjfoUkc.jpg",
+    "https://www.winart.com.pl/assets/5-8hP6LR54.jpg",
+    "https://www.winart.com.pl/assets/7-fXMZYDEe.jpg",
   ];
 
   return (
@@ -13,9 +13,7 @@ function InspirationSection() {
         <h2 className="text-3xl md:text-4xl font-bold mb-4">Inspiracje</h2>
         <p className="text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto">
           Jesteśmy pewni, że nasze porady i inspiracje pomogą Wam osiągnąć cel i
-          stworzyć dom, który nie będzie tylko budynkiem. Czujcie się jak u
-          siebie – czerpcie pełnymi garściami z materiałów, które stworzyliśmy
-          specjalnie dla Was!
+          stworzyć dom, który nie będzie tylko budynkiem.
         </p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 max-w-7xl mx-auto">

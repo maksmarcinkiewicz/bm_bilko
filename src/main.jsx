@@ -9,6 +9,7 @@ import FencesPage from "./components/FencesPage";
 import GarageDoorsPage from "./components/GarageDoorsPage";
 import SmartHomePage from "./components/SmartHomePage";
 import IndustrialDoorsPage from "./components/IndustrialDoorsPage";
+import ContactPage from "./components/ContactPage";
 // Dodaj placeholdery dla stron
 function OknaIDrzwi() {
   return <h1>Okna i Drzwi</h1>;
@@ -21,10 +22,6 @@ function RoletyIZaluzje() {
 }
 function OgrodyZimowe() {
   return <h1>Ogrody Zimowe</h1>;
-}
-
-function Kontakt() {
-  return <h1>Kontakt</h1>;
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -42,7 +39,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/ogrodzenia" element={<FencesPage />} />
         <Route path="/ogrody-zimowe" element={<OgrodyZimowe />} />
         <Route path="/inteligentny-dom" element={<SmartHomePage />} />
-        <Route path="/kontakt" element={<Kontakt />} />
+        <Route path="/kontakt" element={<ContactPage />} />
       </Routes>
       <Footer />
     </Router>

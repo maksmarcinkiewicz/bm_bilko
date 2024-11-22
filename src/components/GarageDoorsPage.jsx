@@ -3,9 +3,9 @@ import React from "react";
 // Sekcja Banerowa
 const GarageDoorBanner = () => {
   const bannerImages = [
-    "/images/garage1.jpg",
-    "/images/garage2.jpg",
-    "/images/garage3.jpg",
+    "https://www.wisniowski.pl/api/preview/4b/4bec2a48-10a1-4220-9cb4-2e9036f814cc.jpg?w=1920&q=100",
+    "https://www.wisniowski.pl/api/preview/55/55c860f0-caa3-42d4-b091-44e95af31244.jpg?w=1920&q=100",
+    "https://www.wisniowski.pl/api/preview/1e/1e7e2913-0c98-4e58-a944-efb5647ec211.jpg?w=1920&q=100",
   ];
 
   return (
@@ -53,21 +53,23 @@ const GarageDoorItem = ({ model, image, description, tags }) => (
 const garageDoors = [
   {
     model: "UniTherm",
-    image: "/images/unitherm.jpg",
+    image:
+      "https://www.wisniowski.pl/api/preview/39/393920d4-a135-4f91-a328-2df84f397a54.jpg?w=1920&q=75",
     description:
       "Nowoczesna brama garażowa o wysokiej izolacji termicznej. Idealna do energooszczędnych domów.",
     tags: ["Kolory: Biały, Szary, Antracyt", "Wzory: Kaseton, Gładki"],
   },
   {
     model: "UniPro",
-    image: "/images/unipro.jpg",
-    description:
-      "Wszechstronna brama garażowa, odpowiednia dla każdego domu. Wyróżnia się trwałością i łatwością obsługi.",
+    image:
+      "https://www.wisniowski.pl/api/preview/2f/2f767200-a2ff-4770-a4f4-7d11893c9c3e.jpg?w=1920&q=75",
+    description: "Wszechstronna brama garażowa, odpowiednia dla każdego domu.",
     tags: ["Kolory: Czerwony, Brązowy", "Wzory: Przetłoczenia poziome"],
   },
   {
     model: "Prime",
-    image: "/images/prime.jpg",
+    image:
+      "https://www.wisniowski.pl/api/preview/e9/e95654a4-4773-4a2d-bf7a-ccfd97674751.jpg?w=1920&q=75",
     description:
       "Ekskluzywna brama garażowa o wyjątkowym designie. Łączy estetykę z najnowszymi technologiami.",
     tags: ["Kolory: Antracyt, Czarny", "Funkcje: Automatyka Smart"],
@@ -75,6 +77,7 @@ const garageDoors = [
 ];
 
 // Sekcja SmartConnected
+
 const SmartConnectedSection = () => (
   <div className="bg-gray-100 py-12">
     <div className="container mx-auto px-4">
@@ -83,10 +86,24 @@ const SmartConnectedSection = () => (
       </h2>
       <p className="text-gray-700 text-center mb-8">
         Odkryj nowoczesne rozwiązania SmartConnected, które pozwalają na zdalne
-        sterowanie bramami garażowymi i drzwiami z dowolnego miejsca na świecie.
-        Zwiększ bezpieczeństwo i komfort dzięki technologii Wiśniowski
-        Connected.
+        sterowanie bramami garażowymi z dowolnego miejsca na świecie. Zwiększ
+        bezpieczeństwo i komfort dzięki technologii Wiśniowski Connected.
       </p>
+
+      {/* Sekcja wideo */}
+      <div className="flex justify-center">
+        <div className="w-full max-w-4xl" style={{ aspectRatio: "16 / 9" }}>
+          {/* Zamień "your-video-id" na prawidłowy ID filmu z YouTube */}
+          <iframe
+            className="w-full h-full rounded-lg shadow-lg"
+            src="https://www.youtube.com/embed/nOLVEo00upc" // Przykładowy ID filmu
+            title="Wiśniowski SmartConnected Video"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </div>
     </div>
   </div>
 );
@@ -98,7 +115,7 @@ const GarageDoorsPage = () => {
       <GarageDoorBanner />
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-center text-blue-700 mb-12">
-          Nasze Bramy Garażowe
+          Bramy Garażowe
         </h1>
         {garageDoors.map((door, index) => (
           <GarageDoorItem
