@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <header className="bg-white p-4 md:px-12 border-b-[1px] border-gray-200 flex items-center justify-between relative z-50">
       <Link to="/" className="text-xl font-bold text-gray-800">
-        <img src={BMLogo} alt="B&M Logo" className="w-12 md:w-24" />
+        <img src={BMLogo} alt="B&M Logo" className="w-12 md:w-20" />
       </Link>
       <motion.button
         whileHover={{ scale: 1.05 }}

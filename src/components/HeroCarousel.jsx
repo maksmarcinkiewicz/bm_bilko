@@ -54,7 +54,7 @@ function HeroCarousel() {
 
   return (
     <div className="bg-white">
-      <section className="hero-carousel bg-gray-100 pt-8">
+      <section className="hero-carousel bg-gray-100">
         {/* Swiper */}
         <Swiper
           modules={[Navigation]}
@@ -76,7 +76,7 @@ function HeroCarousel() {
                   </button>
                 </div>
                 {/* Obraz slajdu */}
-                <div className="image md:w-1/2 mt-6 md:mt-0">
+                <div className="image md:w-1/2 md:mt-0">
                   <img
                     src={slide.imageUrl}
                     alt={slide.title}
