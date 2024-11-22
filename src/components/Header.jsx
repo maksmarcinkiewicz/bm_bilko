@@ -60,6 +60,7 @@ const NavMenu = ({ isOpen }) => (
 const navLinks = [
   { text: "Okna i drzwi", to: "/okna-i-drzwi" },
   { text: "Bramy garażowe", to: "/bramy-garazowe" },
+  { text: "Bramy przemysłowe", to: "/bramy-przemyslowe" },
   { text: "Drzwi zewnętrzne", to: "/drzwi-zewnetrzne" },
   { text: "Rolety i żaluzje", to: "/rolety-i-zaluzje" },
   { text: "Ogrodzenia", to: "/ogrodzenia" },
