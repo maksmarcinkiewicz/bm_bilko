@@ -54,7 +54,7 @@ function HeroCarousel() {
 
   return (
     <div className="bg-white">
-      <section className="hero-carousel bg-gray-100">
+      <section className="hero-carousel bg-gray-100 pt-8">
         {/* Swiper */}
         <Swiper
           modules={[Navigation]}
@@ -89,7 +89,7 @@ function HeroCarousel() {
         </Swiper>
       </section>
       {/* Customowa nawigacja */}
-      <div className="navigation-buttons flex justify-center space-x-2 border-b border-gray-300 pt-6 text-xs px-4">
+      <div className="navigation-buttons flex justify-center space-x-2 md:space-x-4 border-b border-gray-300 pt-6 text-xs md:text-sm lg:text-sm px-4">
         {slides.map((slide, index) => (
           <button
             key={index}

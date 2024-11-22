@@ -49,7 +49,7 @@ function ProjectsShowcase() {
   ];
 
   return (
-    <section className="py-12 bg-gray-100">
+    <section className="pt-12 bg-gray-100">
       {/* Sekcja realizacji */}
       <div className="w-full px-0">
         <h2 className="text-2xl md:text-4xl font-bold text-center mb-8">
@@ -91,7 +91,9 @@ function ProjectsShowcase() {
             <div
               key={index}
               className={`relative group h-64 overflow-hidden ${
-                index === offers.length - 1 ? "col-span-2 lg:col-span-3" : ""
+                index === offers.length - 1
+                  ? "col-span-2 sm:col-span-2 lg:col-span-1" // Ostatni element zajmuje 2 kolumny tylko na małych ekranach
+                  : ""
               }`}
             >
               <img
