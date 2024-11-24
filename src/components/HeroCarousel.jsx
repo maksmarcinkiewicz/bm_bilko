@@ -54,9 +54,10 @@ function HeroCarousel() {
 
   return (
     <div className="bg-white">
-      <section className="hero-carousel bg-gray-100">
+      <section className="hero-carousel bg-gray-50">
         {/* Swiper */}
         <Swiper
+          style={{ marginBottom: 0, paddingBottom: 0 }}
           modules={[Navigation]}
           spaceBetween={30}
           slidesPerView={1}
@@ -66,12 +67,12 @@ function HeroCarousel() {
         >
           {slides.map((slide, index) => (
             <SwiperSlide key={index}>
-              <div className="slide flex flex-col md:flex-row items-center">
+              <div className="slide flex flex-col md:flex-row items-center pt-16">
                 {/* Tekst slajdu */}
-                <div className="content md:w-1/2 text-left px-4">
-                  <h1 className="text-4xl font-bold mb-4">{slide.title}</h1>
-                  <p className="text-lg mb-6">{slide.description}</p>
-                  <button className="bg-black text-white px-6 py-2 shadow-md hover:bg-gray-800 transition">
+                <div className="content md:w-1/2 text-left px-4 pb-8">
+                  <h1 className="text-3xl text-[#3B3B1D] font-bold mb-4">{slide.title}</h1>
+                  <p className="text-md text-left mb-6">{slide.description}</p>
+                  <button className="border-[#3B3B1D] border-2 font-semibold text-[#3B3B1D] rounded-sm px-4 py-1 shadow-sm hover:bg-[#3B3B1D] hover:text-white transition">
                     {slide.buttonText}
                   </button>
                 </div>
@@ -89,15 +90,15 @@ function HeroCarousel() {
         </Swiper>
       </section>
       {/* Customowa nawigacja */}
-      <div className="navigation-buttons flex justify-center space-x-2 md:space-x-4 border-b border-gray-300 pt-6 text-xs md:text-sm lg:text-sm px-4">
+      <div className="navigation-buttons flex justify-center space-x-4 md:space-x-4 border-b border-gray-300 pt-6 text-xs md:text-sm lg:text-sm px-4">
         {slides.map((slide, index) => (
           <button
             key={index}
             onClick={() => handleNavigationClick(index)}
             className={`pb-2 font-semibold transition ${
               activeIndex === index
-                ? "text-black border-b-2 border-black"
-                : "text-gray-500 hover:text-black"
+                ? "text-[#3B3B1D] border-b-2 border-[#3B3B1D]"
+                : "text-gray-500 hover:text-[#3B3B1D]"
             }`}
           >
             {slide.title}

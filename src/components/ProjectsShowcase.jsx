@@ -55,7 +55,7 @@ function ProjectsShowcase() {
   ];
 
   return (
-    <section className="pt-12 bg-gray-100">
+    <section className=" bg-white">
       {/* Kafelki z ofertą */}
       <div className="w-full px-0 mt-12">
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-1 lg:gap-2">

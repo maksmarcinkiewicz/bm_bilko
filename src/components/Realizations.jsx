@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { useState, useRef } from "react";
 
 function Realizations() {
   const realizations = [
@@ -10,20 +11,28 @@ function Realizations() {
     "https://www.winart.com.pl/assets/7-fXMZYDEe.jpg",
   ];
 
+  const [activeIndex, setActiveIndex] = useState(0); // Aktywny indeks
+  const swiperRef = useRef(null); // Referencja do instancji Swipera
+
+  const handleDotClick = (index) => {
+    if (swiperRef.current) {
+      swiperRef.current.slideTo(index); // Przejdź do wybranego slajdu
+    }
+  };
+
   return (
     <div>
       {/* Sekcja realizacji */}
       <div className="w-full px-0 pt-24">
-        <h2 className="text-2xl md:text-4xl font-bold text-center mb-8">
+        <h2 className="text-2xl md:text-4xl text-[#3B3B1D] font-bold px-4 mb-8">
           Nasze Realizacje
         </h2>
         <Swiper
           spaceBetween={20}
           slidesPerView={1} // Domyślnie 1 slajd
           loop={true}
-          pagination={{
-            clickable: true, // Dodaj klikalne kropeczki
-          }}
+          onSwiper={(swiper) => (swiperRef.current = swiper)} // Zapisz instancję Swipera
+          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)} // Śledzenie aktywnego indeksu
           breakpoints={{
             // Konfiguracja dla różnych rozdzielczości ekranu
             768: {
@@ -39,13 +48,28 @@ function Realizations() {
               <img
                 src={url}
                 alt={`Realizacja ${index + 1}`}
-                className="w-full rounded-lg shadow-lg h-[300px]"
+                className="w-full shadow-md h-[300px]"
               />
             </SwiperSlide>
           ))}
         </Swiper>
+        {/* Customowa nawigacja */}
+        <div className="flex justify-center mt-4 space-x-2">
+          {realizations.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => handleDotClick(index)} // Obsługa kliknięcia kropeczki
+              className={`w-3 h-3 rounded-full transition ${
+                activeIndex === index
+                  ? "bg-black" // Aktywna kropeczka
+                  : "bg-gray-300 hover:bg-gray-500" // Nieaktywna kropeczka
+              }`}
+            ></button>
+          ))}
+        </div>
       </div>
     </div>
   );
 }
+
 export default Realizations;
