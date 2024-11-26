@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 
 const IndustrialDoorsPage = () => {
@@ -68,7 +67,13 @@ const IndustrialDoorsPage = () => {
   ];
 
   return (
-    <div className="bg-gray-100">
+    <motion.div
+      className="bg-gray-100"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+    >
       {/* Sekcja główna */}
       <header className="bg-blue-700 text-white text-center py-8">
         <h1 className="text-3xl font-bold">Bramy Przemysłowe</h1>
@@ -103,7 +108,7 @@ const IndustrialDoorsPage = () => {
           </section>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

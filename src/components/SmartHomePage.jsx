@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 
 const SmartHomePage = () => {
@@ -29,7 +28,13 @@ const SmartHomePage = () => {
   ];
 
   return (
-    <div className="bg-gray-100 text-gray-800">
+    <motion.div
+      className="bg-gray-100 text-gray-800"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+    >
       {/* Sekcja główna */}
       <section className="bg-white p-8">
         <div className="container mx-auto grid md:grid-cols-2 gap-8 items-center">
@@ -136,7 +141,7 @@ const SmartHomePage = () => {
           ></iframe>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 };
 

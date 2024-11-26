@@ -3,7 +3,13 @@ import { motion } from "framer-motion";
 
 const ContactPage = () => {
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <motion.div
+      className="bg-gray-100 min-h-screen"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+    >
       {/* Nagłówek */}
       <header className="bg-blue-600 text-white py-8">
         <motion.h1
@@ -152,7 +158,7 @@ const ContactPage = () => {
           </motion.div>
         </section>
       </main>
-    </div>
+    </motion.div>
   );
 };
 

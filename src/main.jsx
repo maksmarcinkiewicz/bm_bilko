@@ -1,6 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import { AnimatePresence } from "framer-motion"; // Importuj AnimatePresence
 import Header from "./components/Header";
 import "./index.css";
 import Home from "./components/Home";
@@ -10,7 +16,8 @@ import GarageDoorsPage from "./components/GarageDoorsPage";
 import SmartHomePage from "./components/SmartHomePage";
 import IndustrialDoorsPage from "./components/IndustrialDoorsPage";
 import ContactPage from "./components/ContactPage";
-// Dodaj placeholdery dla stron
+
+// Placeholdery dla stron
 function OknaIDrzwi() {
   return <h1>Okna i Drzwi</h1>;
 }
@@ -24,13 +31,16 @@ function OgrodyZimowe() {
   return <h1>Ogrody Zimowe</h1>;
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
+// Wrapper do obsługi animacji
+function AnimatedRoutes() {
+  const location = useLocation(); // Pobiera aktualną lokalizację
 
+  return (
+    <AnimatePresence mode="wait">
+      {" "}
+      {/* Tryb animacji */}
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Home />} />
         <Route path="/okna-i-drzwi" element={<OknaIDrzwi />} />
         <Route path="/bramy-garazowe" element={<GarageDoorsPage />} />
         <Route path="/bramy-przemyslowe" element={<IndustrialDoorsPage />} />
@@ -41,6 +51,15 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/inteligentny-dom" element={<SmartHomePage />} />
         <Route path="/kontakt" element={<ContactPage />} />
       </Routes>
+    </AnimatePresence>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <Router>
+      <Header />
+      <AnimatedRoutes /> {/* Zastępuje <Routes /> */}
       <Footer />
     </Router>
   </React.StrictMode>

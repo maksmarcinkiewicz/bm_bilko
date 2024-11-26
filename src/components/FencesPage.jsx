@@ -1,6 +1,6 @@
-import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { motion } from "framer-motion";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -14,9 +14,14 @@ const FenceBanner = () => {
   ];
 
   return (
-    <div className="w-full overflow-hidden">
+    <motion.div
+      className="w-full overflow-hidden"
+      initial={{ opacity: 0, y: 20 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="relative">
-        <div className="flex transition-transform duration-300 ease-in-out">
+        <div className="flex">
           {bannerImages.map((src, idx) => (
             <img
               key={idx}
@@ -27,7 +32,7 @@ const FenceBanner = () => {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

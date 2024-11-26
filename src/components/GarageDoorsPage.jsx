@@ -1,6 +1,5 @@
-import React from "react";
+import { motion } from "framer-motion";
 
-// Sekcja Banerowa
 const GarageDoorBanner = () => {
   const bannerImages = [
     "https://www.wisniowski.pl/api/preview/4b/4bec2a48-10a1-4220-9cb4-2e9036f814cc.jpg?w=1920&q=100",
@@ -90,10 +89,8 @@ const SmartConnectedSection = () => (
         bezpieczeństwo i komfort dzięki technologii Wiśniowski Connected.
       </p>
 
-      {/* Sekcja wideo */}
       <div className="flex justify-center">
         <div className="w-full max-w-4xl" style={{ aspectRatio: "16 / 9" }}>
-          {/* Zamień "your-video-id" na prawidłowy ID filmu z YouTube */}
           <iframe
             className="w-full h-full rounded-lg shadow-lg"
             src="https://www.youtube.com/embed/nOLVEo00upc" // Przykładowy ID filmu
@@ -108,10 +105,15 @@ const SmartConnectedSection = () => (
   </div>
 );
 
-// Strona Główna
 const GarageDoorsPage = () => {
   return (
-    <div className="bg-gray-100">
+    <motion.div
+      className="bg-gray-100"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+    >
       <GarageDoorBanner />
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-center text-blue-700 mb-12">
@@ -128,7 +130,7 @@ const GarageDoorsPage = () => {
         ))}
       </div>
       <SmartConnectedSection />
-    </div>
+    </motion.div>
   );
 };
 

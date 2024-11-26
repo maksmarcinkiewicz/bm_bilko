@@ -5,9 +5,17 @@ import ProjectsShowcase from "./ProjectsShowcase";
 import InspirationSection from "./InspirationSection";
 import Realizations from "./Realizations";
 
+import { motion } from "framer-motion";
+
 function Home() {
   return (
-    <div className="text-gray-900">
+    <motion.div
+      className="text-gray-900"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+    >
       <main>
         <HeroCarousel />
         <Realizations />
@@ -16,7 +24,7 @@ function Home() {
         <InspirationSection />
         <ContactForm />
       </main>
-    </div>
+    </motion.div>
   );
 }
 export default Home;
