@@ -8,7 +8,7 @@ function WhyBM() {
           {/* Tekst i kafelki po lewej stronie */}
           <div className="lg:w-1/2 flex flex-col justify-between">
             {/* Tekst */}
-            <div className=" lg:text-left mb-8 lg:mb-0 pr-4 pb-4">
+            <div className=" lg:text-left mb-8 lg:mb-0 pr-8 pb-4">
               <h2 className="text-2xl text-[#3B3B1D] md:text-4xl font-bold mb-4">
                 Dlaczego B&M?
               </h2>
@@ -34,7 +34,7 @@ function WhyBM() {
             </div>
 
             {/* Boxy z wyrożnikami */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pr-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pr-8">
               <div className="p-6 border rounded-sm shadow-sm bg-gray-100 flex items-center">
                 <div>
                   <h3 className="text-lg font-semibold">Najwyższa jakość</h3>

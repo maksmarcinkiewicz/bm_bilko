@@ -32,7 +32,7 @@ const GarageDoorItem = ({ model, image, description, tags }) => (
       className="w-full md:w-1/2 h-[300px] object-cover"
     />
     <div className="p-6 flex flex-col justify-between">
-      <h3 className="text-2xl font-bold text-blue-700 mb-4">{model}</h3>
+      <h3 className="text-2xl font-bold text-[#1F1F1F] mb-4">{model}</h3>
       <p className="text-gray-700 mb-4">{description}</p>
       <div className="flex flex-wrap gap-2">
         {tags.map((tag, index) => (
@@ -79,27 +79,26 @@ const garageDoors = [
 
 const SmartConnectedSection = () => (
   <div className="bg-gray-100 py-12">
-    <div className="container mx-auto px-4">
-      <h2 className="text-3xl font-bold text-center mb-8 text-blue-700">
+    <div className="container mx-auto px-4 flex flex-col justify-center items-center">
+      <h2 className="text-3xl font-bold text-center mb-8 text-[#1F1F1F]">
         Wiśniowski SmartConnected
       </h2>
-      <p className="text-gray-700 text-center mb-8">
+      <p className="text-gray-700 text-center mb-8 max-w-2xl ">
         Odkryj nowoczesne rozwiązania SmartConnected, które pozwalają na zdalne
         sterowanie bramami garażowymi z dowolnego miejsca na świecie. Zwiększ
         bezpieczeństwo i komfort dzięki technologii Wiśniowski Connected.
       </p>
-
-      <div className="flex justify-center">
-        <div className="w-full max-w-4xl" style={{ aspectRatio: "16 / 9" }}>
-          <iframe
-            className="w-full h-full rounded-lg shadow-lg"
-            src="https://www.youtube.com/embed/nOLVEo00upc" // Przykładowy ID filmu
-            title="Wiśniowski SmartConnected Video"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
+    </div>
+    <div className="flex justify-center">
+      <div className="w-full max-w-4xl" style={{ aspectRatio: "16 / 9" }}>
+        <iframe
+          className="w-full h-full rounded-lg shadow-lg"
+          src="https://www.youtube.com/embed/nOLVEo00upc" // Przykładowy ID filmu
+          title="Wiśniowski SmartConnected Video"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
       </div>
     </div>
   </div>
@@ -116,7 +115,7 @@ const GarageDoorsPage = () => {
     >
       <GarageDoorBanner />
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-center text-blue-700 mb-12">
+        <h1 className="text-4xl font-bold text-center text-[#1F1F1F] mb-12">
           Bramy Garażowe
         </h1>
         {garageDoors.map((door, index) => (

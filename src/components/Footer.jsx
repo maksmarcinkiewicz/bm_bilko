@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <footer className="bg-[#1F1F1F] text-white">
-      <div className="container mx-auto py-10 px-4">
+      <div className="container mx-auto py-10 px-8">
         {/* Górna sekcja z informacjami */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Informacje o firmie */}

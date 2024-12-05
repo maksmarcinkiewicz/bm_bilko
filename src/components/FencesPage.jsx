@@ -92,6 +92,10 @@ const FencesPage = () => {
       />
       <UniversalSlider title="Ogrodzenia Lux" category="lux" />
       <UniversalSlider title="Ogrodzenia Classic" category="classic" />
+      <UniversalSlider title="Ogrodzenia Style" category="style" />
+      <UniversalSlider title="Ogrodzenia Vario" category="vario" />
+      <UniversalSlider title="Ogrodzenia Premium" category="premium" />
+      <UniversalSlider title="Ogrodzenia Basic" category="basic" />
     </div>
   );
 };

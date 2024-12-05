@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import officeImg from "../assets/inside_office.png";
 
 const ContactPage = () => {
   return (
@@ -11,7 +12,7 @@ const ContactPage = () => {
       transition={{ duration: 0.5 }}
     >
       {/* Nagłówek */}
-      <header className="bg-blue-600 text-white py-8">
+      <header className="bg-[#1F1F1F] text-white py-8">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -85,7 +86,7 @@ const ContactPage = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="submit"
-                className="w-full bg-blue-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                className="w-full bg-[#3B3B1D] text-white py-2 px-4 rounded-md shadow-md hover:bg-[#3B3B1D] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
               >
                 Wyślij
               </motion.button>
@@ -100,7 +101,7 @@ const ContactPage = () => {
             className="bg-white shadow-md rounded-lg overflow-hidden"
           >
             <img
-              src="https://via.placeholder.com/600x400"
+              src={officeImg}
               alt="Zdjęcie biura"
               className="w-full h-full object-cover"
             />
@@ -150,7 +151,7 @@ const ContactPage = () => {
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.608560464706!2d21.01222911580094!3d52.22967597975726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc669d6325df%3A0x9c548f0c20203b3!2sPa%C5%82ac%20Kultury%20i%20Nauki!5e0!3m2!1spl!2spl!4v1636141444923!5m2!1spl!2spl"
               width="100%"
-              height="300"
+              height="325"
               allowFullScreen=""
               loading="lazy"
               title="Lokalizacja biura"
