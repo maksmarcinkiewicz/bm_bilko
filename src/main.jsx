@@ -21,6 +21,11 @@ import WindowsDoorsPage from "./components/WindowsDoorPage";
 import DoorsPage from "./components/DoorsPage";
 import BlindsAndShadesPage from "./components/BlindsAndShadesPage";
 import WinterGardensPage from "./components/WinterGardensPage";
+import PrimePage from "./components/pages/garage/PrimePage";
+import UniTherm from "./components/pages/garage/UniTherm";
+import UniPro from "./components/pages/garage/UniPro";
+import WisniowskiConnected from "./components/pages/smart/WisniowskiConnected";
+import TahomaSwitch from "./components/pages/smart/TahomaSwitch";
 
 // Wrapper do obsługi animacji
 function AnimatedRoutes() {
@@ -41,6 +46,11 @@ function AnimatedRoutes() {
         <Route path="/ogrody-zimowe" element={<WinterGardensPage />} />
         <Route path="/inteligentny-dom" element={<SmartHomePage />} />
         <Route path="/kontakt" element={<ContactPage />} />
+        <Route path="/bramy-garazowe/prime" element={<PrimePage />} />
+        <Route path="/bramy-garazowe/unitherm" element={<UniTherm />} />
+        <Route path="/bramy-garazowe/unipro" element={<UniPro />} />
+        <Route path="/wisniowski-connected" element={<WisniowskiConnected />} />
+        <Route path="/tahoma-switch" element={<TahomaSwitch />} />
       </Routes>
     </AnimatePresence>
   );

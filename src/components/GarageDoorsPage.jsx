@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const GarageDoorBanner = () => {
   const bannerImages = [
@@ -23,9 +24,11 @@ const GarageDoorBanner = () => {
   );
 };
 
-// Komponent dla Pojedynczej Bramy
 const GarageDoorItem = ({ model, image, description, tags }) => (
-  <div className="flex flex-col md:flex-row bg-white shadow-md rounded-lg overflow-hidden mb-8">
+  <motion.div
+    className="flex flex-col md:flex-row bg-white shadow-lg rounded-xl overflow-hidden mb-8 transform hover:scale-105 transition duration-300 cursor-pointer"
+    whileHover={{ scale: 1.02 }}
+  >
     <img
       src={image}
       alt={`Brama ${model}`}
@@ -34,7 +37,7 @@ const GarageDoorItem = ({ model, image, description, tags }) => (
     <div className="p-6 flex flex-col justify-between">
       <h3 className="text-2xl font-bold text-[#1F1F1F] mb-4">{model}</h3>
       <p className="text-gray-700 mb-4">{description}</p>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2 mb-4">
         {tags.map((tag, index) => (
           <span
             key={index}
@@ -44,12 +47,24 @@ const GarageDoorItem = ({ model, image, description, tags }) => (
           </span>
         ))}
       </div>
+      <Link to={`/bramy-garazowe/${model.toLowerCase()}`}>
+        <button className="bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition">
+          Dowiedz się więcej
+        </button>
+      </Link>
     </div>
-  </div>
+  </motion.div>
 );
 
-// Dane Bramy
 const garageDoors = [
+  {
+    model: "Prime",
+    image:
+      "https://www.wisniowski.pl/api/preview/e9/e95654a4-4773-4a2d-bf7a-ccfd97674751.jpg?w=1920&q=75",
+    description:
+      "Ekskluzywna brama garażowa o wyjątkowym designie. Łączy estetykę z najnowszymi technologiami.",
+    tags: ["Kolory: Antracyt, Czarny", "Funkcje: Automatyka Smart"],
+  },
   {
     model: "UniTherm",
     image:
@@ -65,44 +80,7 @@ const garageDoors = [
     description: "Wszechstronna brama garażowa, odpowiednia dla każdego domu.",
     tags: ["Kolory: Czerwony, Brązowy", "Wzory: Przetłoczenia poziome"],
   },
-  {
-    model: "Prime",
-    image:
-      "https://www.wisniowski.pl/api/preview/e9/e95654a4-4773-4a2d-bf7a-ccfd97674751.jpg?w=1920&q=75",
-    description:
-      "Ekskluzywna brama garażowa o wyjątkowym designie. Łączy estetykę z najnowszymi technologiami.",
-    tags: ["Kolory: Antracyt, Czarny", "Funkcje: Automatyka Smart"],
-  },
 ];
-
-// Sekcja SmartConnected
-
-const SmartConnectedSection = () => (
-  <div className="bg-gray-100 py-12">
-    <div className="container mx-auto px-4 flex flex-col justify-center items-center">
-      <h2 className="text-3xl font-bold text-center mb-8 text-[#1F1F1F]">
-        Wiśniowski SmartConnected
-      </h2>
-      <p className="text-gray-700 text-center mb-8 max-w-2xl ">
-        Odkryj nowoczesne rozwiązania SmartConnected, które pozwalają na zdalne
-        sterowanie bramami garażowymi z dowolnego miejsca na świecie. Zwiększ
-        bezpieczeństwo i komfort dzięki technologii Wiśniowski Connected.
-      </p>
-    </div>
-    <div className="flex justify-center">
-      <div className="w-full max-w-4xl" style={{ aspectRatio: "16 / 9" }}>
-        <iframe
-          className="w-full h-full rounded-lg shadow-lg"
-          src="https://www.youtube.com/embed/nOLVEo00upc" // Przykładowy ID filmu
-          title="Wiśniowski SmartConnected Video"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
-      </div>
-    </div>
-  </div>
-);
 
 const GarageDoorsPage = () => {
   return (
@@ -128,7 +106,6 @@ const GarageDoorsPage = () => {
           />
         ))}
       </div>
-      <SmartConnectedSection />
     </motion.div>
   );
 };
