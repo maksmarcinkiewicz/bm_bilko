@@ -26,7 +26,7 @@ const GarageDoorBanner = () => {
 
 const GarageDoorItem = ({ model, image, description, tags }) => (
   <motion.div
-    className="flex flex-col md:flex-row bg-white shadow-lg rounded-xl overflow-hidden mb-8 transform hover:scale-105 transition duration-300 cursor-pointer"
+    className="flex flex-col md:flex-row bg-white shadow-lg rounded-sm overflow-hidden mb-8 transform hover:scale-105 transition duration-300 cursor-pointer"
     whileHover={{ scale: 1.02 }}
   >
     <img
@@ -41,14 +41,14 @@ const GarageDoorItem = ({ model, image, description, tags }) => (
         {tags.map((tag, index) => (
           <span
             key={index}
-            className="px-3 py-1 bg-gray-200 text-gray-800 text-sm rounded-full"
+            className="px-3 py-1 bg-gray-200 text-gray-800 text-sm rounded-sm"
           >
             {tag}
           </span>
         ))}
       </div>
       <Link to={`/bramy-garazowe/${model.toLowerCase()}`}>
-        <button className="bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition">
+        <button className="bg-[#3B3B1D] text-white font-semibold px-6 py-2 rounded-sm shadow-md">
           Dowiedz się więcej
         </button>
       </Link>

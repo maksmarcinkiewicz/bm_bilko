@@ -1,19 +1,47 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FiMenu } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom";
 import BMLogo from "../assets/bm_logo_cut.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation(); // For active link detection
+  const [isScrollingUp, setIsScrollingUp] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const location = useLocation();
 
-  const closeMenu = () => setIsOpen(false); // Funkcja zamykająca menu
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY < lastScrollY) {
+        setIsScrollingUp(true); // Przewijamy do góry -> pokazujemy header
+      } else {
+        setIsScrollingUp(false); // Przewijamy w dół -> chowamy header
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
 
   return (
-    <header className="bg-white p-4 md:px-12 border-b-[1px] border-gray-200 flex items-center justify-between relative z-50">
+    <motion.header
+      className={`bg-white p-4 md:px-12 border-b border-gray-200 flex items-center justify-between fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${
+        isScrollingUp ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <Link to="/" className="text-xl font-bold text-gray-800">
-        <motion.img src={BMLogo} alt="B&M Logo" className="w-12 md:w-20" whileHover={{ scale: 1.1 }} />
+        <motion.img
+          src={BMLogo}
+          alt="B&M Logo"
+          className="w-12 md:w-20"
+          whileHover={{ scale: 1.1 }}
+        />
       </Link>
       <motion.button
         whileHover={{ scale: 1.05 }}
@@ -29,12 +57,16 @@ const Header = () => {
             key={link.text}
             text={link.text}
             to={link.to}
-            isActive={location.pathname === link.to} // Highlight active link
+            isActive={location.pathname === link.to}
           />
         ))}
       </div>
-      <NavMenu isOpen={isOpen} currentPath={location.pathname} closeMenu={closeMenu} />
-    </header>
+      <NavMenu
+        isOpen={isOpen}
+        currentPath={location.pathname}
+        closeMenu={() => setIsOpen(false)}
+      />
+    </motion.header>
   );
 };
 
@@ -42,7 +74,7 @@ const NavLink = ({ text, to, isActive, onClick }) => (
   <motion.div className="relative" whileHover={{ scale: 1.1 }}>
     <Link
       to={to}
-      onClick={onClick} // Zamykamy menu po kliknięciu
+      onClick={onClick}
       className={`font-medium text-gray-700 hover:text-[#8DA21A] transition ${
         isActive ? "text-[#8DA21A]" : ""
       }`}
@@ -78,7 +110,7 @@ const NavMenu = ({ isOpen, currentPath, closeMenu }) => (
         text={link.text}
         to={link.to}
         isActive={currentPath === link.to}
-        onClick={closeMenu} // Wywołaj funkcję zamykającą menu
+        onClick={closeMenu}
       />
     ))}
   </motion.div>
@@ -109,7 +141,7 @@ const menuVariants = {
     transition: {
       duration: 0.4,
       when: "afterChildren",
-      ease: [0.25, 0.1, 0.25, 1], 
+      ease: [0.25, 0.1, 0.25, 1],
       staggerChildren: 0.1,
     },
   },

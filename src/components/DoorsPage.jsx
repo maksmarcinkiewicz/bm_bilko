@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
-
+import { useRef } from "react";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import InspirationBottom from "./InspirationBottom";
 const DoorsPage = () => {
   return (
     <motion.div
@@ -16,6 +18,7 @@ const DoorsPage = () => {
       <ModelsSection title="Kolekcja Glass Line" models={glassLineModels} />
       <HeroSectionPirue />
       <ModelsSection title="Kolekcja PIRUE" models={pirueModels} />
+      <InspirationBottom />
     </motion.div>
   );
 };
@@ -85,30 +88,65 @@ const HeroSectionPirue = () => (
 );
 
 const ModelsSection = ({ title, models }) => {
+  const scrollRef = useRef(null);
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const { scrollLeft, clientWidth } = scrollRef.current;
+      const scrollAmount = clientWidth * 0.6; // Przewija o 60% szerokości ekranu
+      if (direction === "left") {
+        scrollRef.current.scrollTo({
+          left: scrollLeft - scrollAmount,
+          behavior: "smooth",
+        });
+      } else {
+        scrollRef.current.scrollTo({
+          left: scrollLeft + scrollAmount,
+          behavior: "smooth",
+        });
+      }
+    }
+  };
+
   return (
-    <section className="bg-white py-16">
+    <section className="bg-white py-16 relative">
       <div className="container mx-auto text-center">
         <h2 className="text-4xl font-extrabold mb-6">{title}</h2>
-        <p className="text-lg mb-12">
-          Zachwyć się ich unikalnością i nowoczesnością. Wybierz dopasowane do
-          Ciebie w każdym detalu.
-        </p>
-        <div className="overflow-x-auto">
-          <div className="flex space-x-8">
-            {models.map((model, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 w-56 bg-gray-50 rounded-lg shadow-lg text-center"
-              >
-                <img
-                  src={`https://www.wisniowski.pl${model.image}`}
-                  alt={model.name}
-                  className="w-full h-full object-cover mb-4"
-                />
-                <h3 className="text-xl font-bold mb-2">{model.name}</h3>
-              </div>
-            ))}
-          </div>
+
+        {/* Strzałki do przesuwania */}
+        <button
+          onClick={() => scroll("left")}
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-300 p-3 rounded-full shadow-md hover:bg-gray-400 hidden md:flex"
+        >
+          <FiChevronLeft size={24} />
+        </button>
+        <button
+          onClick={() => scroll("right")}
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-300 p-3 rounded-full shadow-md hover:bg-gray-400 hidden md:flex"
+        >
+          <FiChevronRight size={24} />
+        </button>
+
+        {/* Karuzela modeli */}
+        <div
+          ref={scrollRef}
+          className="overflow-x-scroll no-scrollbar flex space-x-6 px-4 md:px-12 py-4 scroll-smooth snap-x"
+        >
+          {models.map((model, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 bg-gray-50 rounded-lg shadow-lg text-center p-4"
+            >
+              <img
+                src={`https://www.wisniowski.pl${model.image}`}
+                alt={model.name}
+                className="h-96 object-cover rounded-t-lg"
+              />
+              <h3 className="text-lg md:text-xl font-bold mt-3 mb-2">
+                {model.name}
+              </h3>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import Tabs from "./utils/Tabs";
 import { motion } from "framer-motion";
-
+import InspirationBottom from "./InspirationBottom";
 const IndustrialDoorsPage = () => {
-  const [activeTab, setActiveTab] = React.useState("MakroTherm");
+  const [activeTab, setActiveTab] = useState("MakroTherm");
 
   const renderTabContent = () => {
     switch (activeTab) {
@@ -22,45 +23,11 @@ const IndustrialDoorsPage = () => {
   return (
     <div className="relative w-full h-auto overflow-hidden">
       {/* Tab Navigation */}
-      <div className="bg-gray-100 py-4 border-b border-gray-300">
-        <div className="container mx-auto px-8 md:px-24 flex space-x-4">
-          <button
-            className={`py-2 px-4 ${
-              activeTab === "MakroTherm" ? "bg-gray-300 font-bold" : "bg-white"
-            }`}
-            onClick={() => setActiveTab("MakroTherm")}
-          >
-            MakroTherm 2.0
-          </button>
-          <button
-            className={`py-2 px-4 ${
-              activeTab === "MakroPro" ? "bg-gray-300 font-bold" : "bg-white"
-            }`}
-            onClick={() => setActiveTab("MakroPro")}
-          >
-            MakroPro 2.0
-          </button>
-          <button
-            className={`py-2 px-4 ${
-              activeTab === "MakroPro100" ? "bg-gray-300 font-bold" : "bg-white"
-            }`}
-            onClick={() => setActiveTab("MakroPro100")}
-          >
-            MakroPro 100 2.0
-          </button>
-          <button
-            className={`py-2 px-4 ${
-              activeTab === "Automation" ? "bg-gray-300 font-bold" : "bg-white"
-            }`}
-            onClick={() => setActiveTab("Automation")}
-          >
-            Automatyka
-          </button>
-        </div>
-      </div>
+      <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
 
       {/* Tab Content */}
-      <div>{renderTabContent()}</div>
+      <div className="pt-36 p-6">{renderTabContent()}</div>
+      <InspirationBottom />
     </div>
   );
 };

@@ -67,10 +67,12 @@ function HeroCarousel() {
         >
           {slides.map((slide, index) => (
             <SwiperSlide key={index}>
-              <div className="slide flex flex-col md:flex-row items-center pt-16">
+              <div className="slide flex flex-col md:flex-row items-center pt-16 md:pt-0">
                 {/* Tekst slajdu */}
                 <div className="content md:w-1/2 text-left px-4 pb-8">
-                  <h1 className="text-3xl text-[#3B3B1D] font-bold mb-4">{slide.title}</h1>
+                  <h1 className="text-3xl text-[#3B3B1D] font-bold mb-4">
+                    {slide.title}
+                  </h1>
                   <p className="text-md text-left mb-6">{slide.description}</p>
                   <button className="border-[#3B3B1D] border-2 font-semibold text-[#3B3B1D] rounded-sm px-4 py-1 shadow-sm hover:bg-[#3B3B1D] hover:text-white transition">
                     {slide.buttonText}

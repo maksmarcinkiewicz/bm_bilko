@@ -59,7 +59,7 @@ function Realizations() {
             <button
               key={index}
               onClick={() => handleDotClick(index)} // Obsługa kliknięcia kropeczki
-              className={`w-3 h-3 rounded-full transition ${
+              className={`w-8 h-3 rounded-sm transition ${
                 activeIndex === index
                   ? "bg-black" // Aktywna kropeczka
                   : "bg-gray-300 hover:bg-gray-500" // Nieaktywna kropeczka

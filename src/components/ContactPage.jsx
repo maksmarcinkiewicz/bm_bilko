@@ -31,7 +31,7 @@ const ContactPage = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-            className="bg-white shadow-md rounded-lg p-8"
+            className="bg-white shadow-md rounded-sm p-8"
           >
             <h2 className="text-2xl font-bold mb-4 text-gray-800">
               Wyślij wiadomość
@@ -47,7 +47,7 @@ const ContactPage = () => {
                 <input
                   type="text"
                   id="name"
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                  className="mt-1 block w-full rounded-sm border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Wpisz swoje imię"
                 />
               </div>
@@ -62,7 +62,7 @@ const ContactPage = () => {
                 <input
                   type="email"
                   id="email"
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                  className="mt-1 block w-full rounded-sm border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Wpisz swój email"
                 />
               </div>
@@ -77,7 +77,7 @@ const ContactPage = () => {
                 <textarea
                   id="message"
                   rows="4"
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                  className="mt-1 block w-full rounded-sm border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Wpisz swoją wiadomość"
                 ></textarea>
               </div>
@@ -86,7 +86,7 @@ const ContactPage = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="submit"
-                className="w-full bg-[#3B3B1D] text-white py-2 px-4 rounded-md shadow-md hover:bg-[#3B3B1D] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                className="w-full bg-[#3B3B1D] text-white py-2 px-4 rounded-sm shadow-md hover:bg-[#3B3B1D] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
               >
                 Wyślij
               </motion.button>
@@ -98,7 +98,7 @@ const ContactPage = () => {
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="bg-white shadow-md rounded-lg overflow-hidden"
+            className="bg-white shadow-md rounded-sm overflow-hidden"
           >
             <img
               src={officeImg}
@@ -115,7 +115,7 @@ const ContactPage = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-            className="bg-white shadow-md rounded-lg p-8"
+            className="bg-white shadow-md rounded-sm p-8"
           >
             <h2 className="text-2xl font-bold mb-4 text-gray-800">
               Nasze biuro
@@ -146,7 +146,7 @@ const ContactPage = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="bg-white shadow-md rounded-lg overflow-hidden"
+            className="bg-white shadow-md rounded-sm overflow-hidden"
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.608560464706!2d21.01222911580094!3d52.22967597975726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc669d6325df%3A0x9c548f0c20203b3!2sPa%C5%82ac%20Kultury%20i%20Nauki!5e0!3m2!1spl!2spl!4v1636141444923!5m2!1spl!2spl"

@@ -74,7 +74,7 @@ function WhyBM() {
             <img
               src="https://lh3.googleusercontent.com/p/AF1QipPsFn_LrgHwsewD-Lus6-3VMJScWv6bVT_CzLwF=s680-w680-h510"
               alt="Biuro B&M"
-              className="w-full h-full rounded-lg shadow-md object-cover"
+              className="w-full h-full rounded-sm shadow-md object-cover"
             />
           </div>
         </div>

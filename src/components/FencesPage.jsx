@@ -5,6 +5,7 @@ import { products } from "../data/productData";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import InspirationBottom from "./InspirationBottom";
 
 const FenceBanner = () => {
   const bannerImages = [
@@ -96,6 +97,7 @@ const FencesPage = () => {
       <UniversalSlider title="Ogrodzenia Vario" category="vario" />
       <UniversalSlider title="Ogrodzenia Premium" category="premium" />
       <UniversalSlider title="Ogrodzenia Basic" category="basic" />
+      <InspirationBottom />
     </div>
   );
 };

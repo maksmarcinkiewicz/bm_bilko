@@ -10,9 +10,9 @@ function ContactSection() {
             <img
               src={officeImg}
               alt="Zdjęcie biura"
-              className="rounded-lg shadow-lg w-full pt-14"
+              className="rounded-sm shadow-lg w-full pt-14"
             />
-            <div className="absolute top-0 left-0 bg-[#1F1F1F] bg-opacity-70 text-white p-6 rounded-lg">
+            <div className="absolute top-0 left-0 bg-[#1F1F1F] bg-opacity-70 text-white p-6 rounded-sm">
               <h3 className="text-xl font-bold mb-2">Skontaktuj się z nami</h3>
               <p className="text-xs leading-relaxed">
                 Masz pytania? Napisz do nas, a nasz zespół odpowie na Twoje
@@ -24,7 +24,7 @@ function ContactSection() {
         </div>
 
         {/* Prawa strona: Formularz */}
-        <div className="w-full lg:w-1/2 bg-white p-6 rounded-lg shadow-lg">
+        <div className="w-full lg:w-1/2 bg-white p-6 rounded-sm shadow-lg">
           <h2 className="text-2xl md:text-3xl font-bold text-[#3B3B1D] mb-6">
             Zapytaj o wycenę
           </h2>
