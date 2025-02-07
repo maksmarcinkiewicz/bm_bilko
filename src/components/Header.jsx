@@ -6,34 +6,12 @@ import BMLogo from "../assets/bm_logo_cut.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrollingUp, setIsScrollingUp] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+
   const location = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY < lastScrollY) {
-        setIsScrollingUp(true); // Przewijamy do góry -> pokazujemy header
-      } else {
-        setIsScrollingUp(false); // Przewijamy w dół -> chowamy header
-      }
-
-      setLastScrollY(currentScrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [lastScrollY]);
 
   return (
     <motion.header
-      className={`bg-white p-4 md:px-12 border-b border-gray-200 flex items-center justify-between fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${
-        isScrollingUp ? "translate-y-0" : "-translate-y-full"
-      }`}
+      className={`bg-white p-4 md:px-12 border-b border-gray-200 flex items-center justify-between fixed top-0 left-0 right-0 z-50 transition-transform duration-300 `}
     >
       <Link to="/" className="text-xl font-bold text-gray-800">
         <motion.img

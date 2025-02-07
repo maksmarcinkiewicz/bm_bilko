@@ -71,7 +71,7 @@ const UniProDetails = () => {
 
   return (
     <div className="md:px-24 py-12">
-      <h2 className="text-5xl  mb-8 md:mb-24">Szczegóły</h2>
+      <h2 className="text-5xl  mb-8 md:mb-24 px-4 md:px-0">Szczegóły</h2>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         {details.map((detail, idx) => (
           <div key={idx} className="flex flex-col overflow-hidden">
@@ -81,7 +81,9 @@ const UniProDetails = () => {
               className="w-96 h-96 object-cover"
             />
             <div className="flex flex-col mt-4">
-              <h3 className="text-xl font-semibold mb-4">{detail.title}</h3>
+              <h3 className="text-xl font-semibold mb-4 px-4 md:px-0">
+                {detail.title}
+              </h3>
               <p className="text-gray-700 md:max-w-sm text-justify">
                 {detail.description}
               </p>

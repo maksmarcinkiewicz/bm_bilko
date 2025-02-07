@@ -68,7 +68,7 @@ const UniThermDetails = () => {
 
   return (
     <div className="md:px-24 py-12">
-      <h2 className="text-5xl mb-8 md:mb-24">
+      <h2 className="text-5xl mb-8 md:mb-24 px-4 md:px-0">
         Bezpieczeństwo i funkcjonalność
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-0">
@@ -80,8 +80,8 @@ const UniThermDetails = () => {
               className="w-72 object-cover"
             />
             <div className="pt-4 flex flex-col md:max-w-xs">
-              <h3 className="text-xl mb-4">{detail.title}</h3>
-              <p className="text-gray-700">{detail.description}</p>
+              <h3 className="text-xl mb-4 px-4">{detail.title}</h3>
+              <p className="text-gray-700 px-4">{detail.description}</p>
             </div>
           </div>
         ))}

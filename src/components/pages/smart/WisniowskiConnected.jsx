@@ -68,7 +68,7 @@ const FeaturesSection = () => {
         <h2 className="text-2xl mb-2">Na dobry początek</h2>
         <div className="flex flex-col md:flex-row items-start justify-between gap-12">
           <div className="md:w-1/2">
-            <h3 className="text-7xl mb-4">WIŚNIOWSKI Connected</h3>
+            <h3 className="text-5xl md:text-7xl mb-4">WIŚNIOWSKI Connected</h3>
 
             <ul className="md:pt-24 text-xl text-gray-700">
               <p className="text-3xl mb-2">

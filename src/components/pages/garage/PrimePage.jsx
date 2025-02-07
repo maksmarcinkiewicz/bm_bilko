@@ -71,7 +71,7 @@ const PrimeDetails = () => {
   ];
 
   return (
-    <div className="md:px-24 py-12">
+    <div className="md:px-24 py-12 px-4">
       <h2 className="text-5xl  mb-8 md:mb-24">Szczegóły</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {details.map((detail, idx) => (

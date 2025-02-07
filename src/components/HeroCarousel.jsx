@@ -54,7 +54,7 @@ function HeroCarousel() {
 
   return (
     <div className="bg-white">
-      <section className="hero-carousel bg-gray-50">
+      <section className="hero-carousel bg-gray-50 mt-16 md:mt-0">
         {/* Swiper */}
         <Swiper
           style={{ marginBottom: 0, paddingBottom: 0 }}

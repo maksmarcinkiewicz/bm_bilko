@@ -44,8 +44,8 @@ const InspirationBottom = () => {
 
   return (
     <div className="pt-12">
-      <h2 className="md:px-24 text-5xl font-semibold  mb-4">Inspiracje</h2>
-      <p className="md:px-24 text-gray-700 mb-8 text-xl">
+      <h2 className="md:px-24 text-5xl font-semibold  mb-4 px-4">Inspiracje</h2>
+      <p className="md:px-24 text-gray-700 mb-8 text-xl px-4">
         Zainspiruj się naszymi realizacjami
       </p>
       <div className="grid grid-cols-4 grid-rows-2 gap-1">
