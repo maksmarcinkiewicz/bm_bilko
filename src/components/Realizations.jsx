@@ -24,7 +24,7 @@ function Realizations() {
     <div>
       {/* Sekcja realizacji */}
       <div className="w-full px-0 pt-24">
-        <h2 className="text-2xl md:text-4xl text-[#3B3B1D] font-bold px-4 mb-8">
+        <h2 className="text-2xl md:text-4xl text-[#3B3B1D] font-bold px-4 mb-8 md:px-12">
           Nasze Realizacje
         </h2>
         <Swiper

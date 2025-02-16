@@ -69,7 +69,7 @@ function HeroCarousel() {
             <SwiperSlide key={index}>
               <div className="slide flex flex-col md:flex-row items-center pt-16 md:pt-0">
                 {/* Tekst slajdu */}
-                <div className="content md:w-1/2 text-left px-4 pb-8">
+                <div className="content md:w-1/2 text-left px-4 pb-8 md:px-12">
                   <h1 className="text-3xl text-[#3B3B1D] font-bold mb-4">
                     {slide.title}
                   </h1>

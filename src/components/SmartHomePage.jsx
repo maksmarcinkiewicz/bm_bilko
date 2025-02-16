@@ -4,7 +4,7 @@ import InspirationBottom from "./InspirationBottom";
 const SmartHomePage = () => {
   return (
     <motion.div
-      className="bg-gray-100 text-gray-800"
+      className="bg-gray-100 text-gray-800 md:mt-32"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}

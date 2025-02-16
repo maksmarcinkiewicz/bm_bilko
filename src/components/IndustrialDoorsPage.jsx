@@ -26,7 +26,7 @@ const IndustrialDoorsPage = () => {
       <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
 
       {/* Tab Content */}
-      <div className="pt-36 p-6">{renderTabContent()}</div>
+      <div className="mt-24 md:pt-36 p-6">{renderTabContent()}</div>
       <InspirationBottom />
     </div>
   );
