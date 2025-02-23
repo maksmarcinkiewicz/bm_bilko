@@ -24,7 +24,7 @@ const FenceBanner = () => {
               key={idx}
               src={src}
               alt={`Ogrodzenie ${idx + 1}`}
-              className="w-1/3 h-[400px] md:h-[500px] object-fit"
+              className="w-1/3 h-[150px] md:h-[500px] object-fit mt-24 md:mt-0"
             />
           ))}
         </div>
