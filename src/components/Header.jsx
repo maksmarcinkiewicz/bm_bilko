@@ -17,7 +17,7 @@ const Header = () => {
         <motion.img
           src={BMLogo}
           alt="B&M Logo"
-          className="w-12 md:w-20"
+          className="w-20 md:w-24"
           whileHover={{ scale: 1.1 }}
         />
       </Link>

@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { useRef, useState } from "react";
+import HeroSlider1Img from "../assets/hero-slider-1.jpg";
 
 // Import stylów Swiper.js
 import "swiper/css";
@@ -13,8 +14,7 @@ function HeroCarousel() {
       description:
         "Poznaj rozwiązania, które łączą design i funkcjonalność. Idealne do Twojego domu lub biura!",
       buttonText: "Zobacz więcej",
-      imageUrl:
-        "https://sklep.wisniowski.pl/img/banery/WebP/okna-pvc-primo.webp",
+      imageUrl: HeroSlider1Img,
     },
     {
       title: "Bramy garażowe i przemysłowe",
@@ -97,7 +97,7 @@ function HeroCarousel() {
           <button
             key={index}
             onClick={() => handleNavigationClick(index)}
-            className={`pb-2 font-semibold transition ${
+            className={`pb-2 md:text-lg font-semibold transition ${
               activeIndex === index
                 ? "text-[#3B3B1D] border-b-2 border-[#3B3B1D]"
                 : "text-gray-500 hover:text-[#3B3B1D]"

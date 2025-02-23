@@ -2,7 +2,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { motion } from "framer-motion";
 import { products } from "../data/productData";
-
+import fence1Img from "../assets/fences1.jpg";
+import fence2Img from "../assets/fences2.jpg";
 import "swiper/css";
 import "swiper/css/navigation";
 import InspirationBottom from "./InspirationBottom";
@@ -10,20 +11,20 @@ import InspirationBottom from "./InspirationBottom";
 const FenceBanner = () => {
   const bannerImages = [
     "https://www.wisniowski.pl/api/preview/43/43ab9e98-fe4a-469f-b18b-dac01b98db70.jpg?w=1200&q=95",
-    "https://www.wisniowski.pl/api/preview/61/61f32a49-4edc-43db-bee0-d376aca0e01e.jpg?w=1200&q=95",
-    "https://www.wisniowski.pl/api/preview/11/11a6c9d4-8b9d-44e8-944e-320360702d60.jpg?w=1920&q=100",
+    fence1Img,
+    fence2Img,
   ];
 
   return (
     <motion.div className="w-full overflow-hidden">
       <div className="relative">
-        <div className="flex">
+        <div className="flex justify-between">
           {bannerImages.map((src, idx) => (
             <img
               key={idx}
               src={src}
               alt={`Ogrodzenie ${idx + 1}`}
-              className="w-full h-[400px] object-cover"
+              className="w-1/3 h-[400px] md:h-[500px] object-fit"
             />
           ))}
         </div>
@@ -39,43 +40,56 @@ const UniversalSlider = ({ title, category }) => {
   return (
     <div className="bg-gray-100 py-8">
       <h2 className="text-2xl font-bold text-center mb-8">{title}</h2>
-      <Swiper
-        modules={[Navigation]}
-        navigation
-        spaceBetween={50}
-        slidesPerView={1}
-        className="w-full"
-      >
-        {productsList.map((product, index) => (
-          <SwiperSlide key={index}>
-            <div className="flex flex-col md:flex-row items-center justify-evenly bg-white shadow-md rounded-lg p-6 md:p-10">
-              {/* Sekcja obrazu */}
-              <div className="flex-shrink-0">
-                <img
-                  src={product.image}
-                  alt={product.model}
-                  className="w-64 h-64 object-cover rounded-md mb-4 md:mb-0"
-                />
+      <div className="relative max-w-6xl mx-auto">
+        {" "}
+        {/* Ograniczenie szerokości i wycentrowanie */}
+        <Swiper
+          modules={[Navigation]}
+          navigation
+          spaceBetween={50}
+          slidesPerView={1}
+          className="w-full overflow-visible" // Strzałki poza szarym blokiem
+        >
+          {productsList.map((product, index) => (
+            <SwiperSlide key={index}>
+              <div className="flex flex-col md:flex-row items-center justify-center bg-gray-200 shadow-md rounded-lg p-10">
+                {/* Sekcja obrazu */}
+                <div className="flex-shrink-0 w-[500px] h-[300px] md:w-[600px] md:h-[550px]">
+                  <img
+                    src={product.image}
+                    alt={product.model}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                {/* Sekcja tekstowa */}
+                <div className="flex flex-col text-left md:ml-10">
+                  <p className="text-sm uppercase text-gray-500 tracking-widest">
+                    Modern
+                  </p>
+                  <h3 className="text-4xl font-light mb-2">{product.model}</h3>
+                  <p className="text-lg font-bold">
+                    Wykonanie:{" "}
+                    <span className="font-normal text-gray-600">
+                      {product.construction}
+                    </span>
+                  </p>
+                  <p className="text-lg font-bold">
+                    Materiał:{" "}
+                    <span className="font-normal text-gray-600">
+                      {product.options}
+                    </span>
+                  </p>
+                  {product.description ? (
+                    <p className="text-lg font-bold">{product.description}</p>
+                  ) : (
+                    ""
+                  )}
+                </div>
               </div>
-              {/* Sekcja tekstowa */}
-              <div className="flex flex-col md:ml-6 text-left lg:w-96">
-                <h3 className="text-xl font-bold mb-2">
-                  Model: {product.model}
-                </h3>
-                <p className="text-gray-600">{product.description}</p>
-                <p className="text-gray-600">
-                  {product.construction
-                    ? `Wykonanie: ${product.construction}`
-                    : ""}
-                </p>
-                <p className="text-gray-600">
-                  {product.options ? `Dostępne opcje: ${product.options}` : ""}
-                </p>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </div>
   );
 };
@@ -87,16 +101,20 @@ const FencesPage = () => {
       <FenceBanner />
       {/* Użycie slidera dla poszczególnych kategorii */}
       <UniversalSlider title="Ogrodzenia Modern" category="modern" />
+      <UniversalSlider title="" category="modernAlu" />
       <UniversalSlider
         title="Ogrodzenia Home Inclusive"
         category="homeInclusive"
       />
+      <UniversalSlider title="" category="homeInclusiveAlu" />
       <UniversalSlider title="Ogrodzenia Lux" category="lux" />
       <UniversalSlider title="Ogrodzenia Classic" category="classic" />
+      <UniversalSlider title="" category="classicAlu" />
       <UniversalSlider title="Ogrodzenia Style" category="style" />
       <UniversalSlider title="Ogrodzenia Vario" category="vario" />
       <UniversalSlider title="Ogrodzenia Premium" category="premium" />
       <UniversalSlider title="Ogrodzenia Basic" category="basic" />
+      <UniversalSlider title="Ogrodzenia Inifity" category="infinity" />
       <InspirationBottom />
     </div>
   );

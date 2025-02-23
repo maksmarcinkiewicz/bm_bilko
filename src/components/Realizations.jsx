@@ -48,7 +48,7 @@ function Realizations() {
               <img
                 src={url}
                 alt={`Realizacja ${index + 1}`}
-                className="w-full shadow-md h-[300px]"
+                className="w-full shadow-md h-[300px] md:h-[400px]"
               />
             </SwiperSlide>
           ))}

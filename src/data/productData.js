@@ -1,6 +1,15 @@
 export const products = {
   modern: [
     {
+      model: "AW.10.109",
+      image:
+        "https://www.wisniowski.pl/api/preview/7d/7d7bbc0c-b649-4710-a283-8e84b026959a.png?w=1080&q=95",
+      description: "",
+      construction:
+        "70x20, blacha pełna, blacha perforowana: Qg 5-8, Qg 10-30, Rv 5-8, Oz 10-16",
+      options: "balustrada",
+    },
+    {
       model: "AW.10.100",
       image:
         "https://www.wisniowski.pl/api/preview/06/06d7f364-2866-4c3f-b162-ffa2a03ba29d.png?w=1080&q=95",
@@ -75,15 +84,7 @@ export const products = {
         "70x20 mm, blacha pełna, blacha perforowana: Qg 5-8, Qg 10-30, Rv 5-8, Oz 10-16",
       options: "balustrada",
     },
-    {
-      model: "AW.10.109",
-      image:
-        "https://www.wisniowski.pl/api/preview/7d/7d7bbc0c-b649-4710-a283-8e84b026959a.png?w=1080&q=95",
-      description: "",
-      construction:
-        "70x20, blacha pełna, blacha perforowana: Qg 5-8, Qg 10-30, Rv 5-8, Oz 10-16",
-      options: "balustrada",
-    },
+
     {
       model: "AW.10.110",
       image:
@@ -128,15 +129,65 @@ export const products = {
       options: "",
     },
   ],
-  homeInclusive: [
+  modernAlu: [
     {
-      model: "AW.10.200",
+      model: "AW.AL.100",
       image:
-        "https://www.wisniowski.pl/api/preview/56/56a04cfb-ab84-4f56-aa3b-96761c83da92.png?w=1080&q=95",
-      description: "Aplikacje ozdobne, personalizacja paneli",
-      construction: "panel 500mm",
-      options: "",
+        "https://www.wisniowski.pl/api/preview/20/200f9233-1d2b-449d-b26a-d5649a0e54a4.png?w=1080&q=95",
+      description: "",
+      construction: "panel 200 mm",
+      options: "aluminium",
     },
+    {
+      model: "AW.AL.101",
+      image:
+        "https://www.wisniowski.pl/api/preview/07/079d6a24-a14f-4eb1-b972-594399c333c9.png?w=1080&q=95",
+      description: "",
+      construction: "panel 100 mm",
+      options: "aluminium",
+    },
+    {
+      model: "AW.AL.102",
+      image:
+        "https://www.wisniowski.pl/api/preview/2d/2d66f306-877c-4361-9b9a-a5d7c7d10361.png?w=1080&q=95",
+      description: "",
+      construction: "panel 50 mm",
+      options: "aluminium",
+    },
+    {
+      model: "AW.AL.103",
+      image:
+        "https://www.wisniowski.pl/api/preview/6a/6aad96d4-6eb8-4ed9-8e8d-af109688ce5f.png?w=1080&q=95",
+      description: "",
+      construction: "aluminium",
+      options: "decor",
+    },
+    {
+      model: "AW.AL.104",
+      image:
+        "https://www.wisniowski.pl/api/preview/4f/4f2662ad-e528-497d-81ba-5f435517d234.png?w=1080&q=95",
+      description: "",
+      construction: "aluminium",
+      options: "decor",
+    },
+    {
+      model: "AW.AL.105",
+      image:
+        "https://www.wisniowski.pl/api/preview/d1/d1e726db-b912-49f7-b158-52ee5e1c8fde.png?w=1080&q=95",
+      description: "",
+      construction: "aluminium",
+      options: "decor",
+    },
+    {
+      model: "AW.AL.106",
+      image:
+        "https://www.wisniowski.pl/api/preview/14/14cf7e64-c08e-4efa-8f63-01a9c29d2f62.png?w=1080&q=95",
+      description: "",
+      construction: "w wersji bez prześwitu",
+      options: "aluminium",
+    },
+  ],
+  homeInclusive: [
     {
       model: "AW.10.228",
       image:
@@ -145,6 +196,15 @@ export const products = {
       construction: "w wersji z prześwitem",
       options: "personalizacja lameli",
     },
+    {
+      model: "AW.10.200",
+      image:
+        "https://www.wisniowski.pl/api/preview/56/56a04cfb-ab84-4f56-aa3b-96761c83da92.png?w=1080&q=95",
+      description: "Aplikacje ozdobne, personalizacja paneli",
+      construction: "panel 500mm",
+      options: "",
+    },
+
     {
       model: "AW.10.228",
       image:
@@ -178,7 +238,26 @@ export const products = {
       options: "",
     },
   ],
+  homeInclusiveAlu: [
+    {
+      model: "AW.AL.202",
+      image:
+        "https://www.wisniowski.pl/api/preview/72/720b1a70-93b9-411a-9d07-110b233ce128.png?w=1080&q=95",
+      description: "profile ułożone w żaluzję (skośne)",
+      construction: "aluminium",
+      options: "decor",
+    },
+  ],
   lux: [
+    {
+      model: "AW.10.56",
+      image:
+        "https://www.wisniowski.pl/api/preview/28/28981062-cdee-426c-b67f-0e687aa29efb.png?w=1080&q=95",
+      description: "",
+      construction: "stalowe pręty o przekroju 14 x 14 [mm]",
+      options:
+        "zakończenie górnej krawędzi: proste, łukiem wypukłym; dostępne w wersji przekoszonej; balustrada",
+    },
     {
       model: "AW.10.31",
       image:
@@ -275,15 +354,7 @@ export const products = {
       options:
         "zakończenie górnej krawędzi: proste; dostępne w wersji przekoszonej",
     },
-    {
-      model: "AW.10.56",
-      image:
-        "https://www.wisniowski.pl/api/preview/28/28981062-cdee-426c-b67f-0e687aa29efb.png?w=1080&q=95",
-      description: "",
-      construction: "stalowe pręty o przekroju 14 x 14 [mm]",
-      options:
-        "zakończenie górnej krawędzi: proste, łukiem wypukłym; dostępne w wersji przekoszonej; balustrada",
-    },
+
     {
       model: "AW.10.57",
       image:
@@ -441,6 +512,42 @@ export const products = {
       construction:
         "stalowe kształtowniki zamknięte, zakończone zatyczkami w górnej linii wypełnienia, 40x27 [mm]",
       options: "zakończenie górnej krawędzi: proste",
+    },
+    {
+      model: "AW.10.78",
+      image:
+        "https://www.wisniowski.pl/api/preview/0b/0b1c0391-56fc-4c58-b256-a525a5aa7567.png?w=1080&q=95",
+      description: "",
+      construction:
+        "stalowe kształtowniki zamknięte, zakończone zatyczkami w górnej linii wypełnienia, 60x20 [mm]",
+      options: "zakończenie górnej krawędzi: proste",
+    },
+    {
+      model: "AW.VA.55",
+      image:
+        "https://www.wisniowski.pl/api/preview/0b/0b1c0391-56fc-4c58-b256-a525a5aa7567.png?w=1080&q=95",
+      description: "",
+      construction:
+        "panel zgrzewany z prętów stalowych (pojedynczych poziomych i pionowych) – panel VEGA U86 Średnica drutu poziomego: 8 [mm] Średnica drutu pionowego: 6 [mm] Wymiar oczek prostych: 50 x 200 [mm] ",
+      options: "zakończenie górnej krawędzi: proste",
+    },
+    {
+      model: "AW.10.TT",
+      image:
+        "https://www.wisniowski.pl/api/preview/37/3704b643-d159-44b5-9664-106b27594762.png?w=1080&q=95",
+      description: "",
+      construction: "wypełnienie blachą trapezową T-10 w układzie pionowym",
+      options: "zakończenie górnej krawędzi: proste",
+    },
+  ],
+  classicAlu: [
+    {
+      model: "AW.AL.00",
+      image:
+        "https://www.wisniowski.pl/api/preview/cc/cc923b2a-2270-47e6-8315-9d62987365e0.png?w=1080&q=95",
+      description: "",
+      construction: "profile pionowe 20x40",
+      options: "aluminium",
     },
   ],
   style: [
@@ -686,9 +793,9 @@ export const products = {
     },
     {
       model: "AW.10.91",
-      image: "",
-      description:
+      image:
         "https://www.wisniowski.pl/api/preview/a4/a4b81c66-1f99-4f1c-a1c6-00fe40fbfd7f.png?w=1080&q=95",
+      description: "",
       construction: "stalowe kształtowniki zamknięte o przekroju 15x15 [mm]",
       options: "zakończenie górnej krawędzi: proste",
     },
@@ -715,6 +822,35 @@ export const products = {
       description: "",
       construction: "stalowe kształtowniki zamknięte o przekroju 15x15 [mm]",
       options: "zakończenie górnej krawędzi: łukiem wypukłym",
+    },
+  ],
+  infinity: [
+    {
+      model: "AW.10.130",
+      image:
+        "https://www.wisniowski.pl/api/preview/a8/a8c1b522-be1e-4be3-aaea-c8ab0cb010b8.png?w=1080&q=95",
+      description: "",
+      construction:
+        "profile pionowe 60x40 mm, zakończone zatyczkami w górnej linii wypełnienia",
+      options: "poprzeczka górna",
+    },
+    {
+      model: "AW.10.131",
+      image:
+        "https://www.wisniowski.pl/api/preview/9b/9b21c3b8-d758-46e3-aea3-049cc4875f98.png?w=1080&q=95",
+      description: "Prześwit wypełnienia: 50 mm",
+      construction:
+        "profile pionowe 60x40 mm, zakończone zatyczkami w górnej linii wypełnienia",
+      options: "poprzeczka górna",
+    },
+    {
+      model: "AW.10.132",
+      image:
+        "https://www.wisniowski.pl/api/preview/f3/f3a2004f-e784-40ee-a232-7075401e4fa4.png?w=1080&q=95",
+      description: "Prześwit wypełnienia: 60 mm",
+      construction:
+        "profile pionowe 60x40 mm, zakończone zatyczkami w górnej linii wypełnienia",
+      options: "poprzeczka górna",
     },
   ],
   // Inne kategorie produktów...
