@@ -49,7 +49,7 @@ const IndustrialDoorsPage = () => {
   console.log(activeTab);
   return (
     <div className="relative w-full h-auto overflow-hidden">
-      <div className="w-full flex mt-24 md:mt-36">
+      <div className="w-full flex mt-48 md:mt-36">
         <motion.img
           src={links[activeTab]?.first || ""}
           alt="Bramy przemysłowe"

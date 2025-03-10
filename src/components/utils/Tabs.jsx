@@ -28,7 +28,7 @@ const Tabs = ({ activeTab, setActiveTab }) => {
 
   return (
     <motion.div
-      className={`fixed left-0 right-0 bg-white shadow-md border-b border-gray-300 transition-all duration-300 z-50 top-20 md:top-24`}
+      className={`fixed left-0 right-0 bg-white shadow-md border-b border-gray-300 transition-all duration-300 z-50 top-20 md:top-24 mt-8 `}
     >
       <div className="container mx-auto px-4 md:px-8 lg:px-24">
         <div className="flex overflow-x-auto no-scrollbar justify-start md:justify-center items-center py-3 space-x-2 sm:space-x-4">
