@@ -52,8 +52,8 @@ const Tabs = ({ activeTab, setActiveTab }) => {
 };
 
 const tabList = [
-  { id: "MakroTherm", label: "MakroTherm 2.0" },
   { id: "MakroPro", label: "MakroPro 2.0" },
+  { id: "MakroTherm", label: "MakroTherm 2.0" },
   { id: "MakroPro100", label: "MakroPro 100 2.0" },
   { id: "Automation", label: "Automatyka" },
 ];

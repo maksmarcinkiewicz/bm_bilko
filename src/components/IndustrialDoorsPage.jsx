@@ -3,14 +3,14 @@ import Tabs from "./utils/Tabs";
 import { motion } from "framer-motion";
 import InspirationBottom from "./InspirationBottom";
 const IndustrialDoorsPage = () => {
-  const [activeTab, setActiveTab] = useState("MakroTherm");
+  const [activeTab, setActiveTab] = useState("MakroPro");
 
   const renderTabContent = () => {
     switch (activeTab) {
-      case "MakroTherm":
-        return <MakroThermTab />;
       case "MakroPro":
         return <MakroProTab />;
+      case "MakroTherm":
+        return <MakroThermTab />;
       case "MakroPro100":
         return <MakroPro100Tab />;
       case "Automation":
@@ -20,13 +20,68 @@ const IndustrialDoorsPage = () => {
     }
   };
 
+  let links = {
+    MakroPro: {
+      first:
+        "https://www.wisniowski.pl/api/preview/be/be5e4b96-9e23-46e9-80e9-0c5a57ac25f7.jpg?w=1920&q=100",
+      second:
+        "https://www.wisniowski.pl/api/preview/aa/aa4e8c80-69d0-4530-8029-eba5746bbe83.jpg?w=1920&q=100",
+      third:
+        "https://www.wisniowski.pl/api/preview/c0/c04dfa88-c3e3-4754-9a98-84450f21f723.jpg?w=1920&q=100",
+    },
+    MakroTherm: {
+      first:
+        "https://www.wisniowski.pl/api/preview/be/be5e4b96-9e23-46e9-80e9-0c5a57ac25f7.jpg?w=1920&q=100",
+      second:
+        "https://www.wisniowski.pl/api/preview/eb/ebb447ff-a950-4583-bb64-5b3b43db6079.jpg?w=1920&q=100",
+      third:
+        "https://www.wisniowski.pl/api/preview/7d/7dfea428-860b-470f-ba36-11e53801d408.jpg?w=1920&q=100",
+    },
+    MakroPro100: {
+      first:
+        "https://www.wisniowski.pl/api/preview/01/012f7112-f762-4d8c-9436-55e2b9173b09.jpg?w=1920&q=100",
+      second:
+        "https://www.wisniowski.pl/api/preview/c6/c6b450d6-b399-4096-a82e-b01316a2ef07.jpg?w=1920&q=100",
+      third:
+        "https://www.wisniowski.pl/api/preview/e4/e4d6e0bc-1474-4dea-9390-ee8c99ef50ff.jpg?w=1920&q=100",
+    },
+  };
+  console.log(activeTab);
   return (
     <div className="relative w-full h-auto overflow-hidden">
-      {/* Tab Navigation */}
+      <div className="w-full flex mt-24 md:mt-36">
+        <motion.img
+          src={links[activeTab]?.first || ""}
+          alt="Bramy przemysłowe"
+          className="w-1/3 h-auto object-cover"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        />
+        <motion.img
+          src={links[activeTab]?.second || ""}
+          alt="Segmentowe bramy"
+          className="w-1/3 h-auto object-cover"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.9 }}
+        />
+        <motion.img
+          src={links[activeTab]?.third || ""}
+          alt="Panel INNOVO 60mm"
+          className="w-1/3 h-auto object-cover"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+        />
+      </div>
+
+      {/* 🔹 Nawigacja zakładek */}
       <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
 
-      {/* Tab Content */}
-      <div className="mt-24 md:pt-36 p-6">{renderTabContent()}</div>
+      {/* 🔹 Treść wybranej zakładki */}
+      <div className=" p-6">{renderTabContent()}</div>
+
       <InspirationBottom />
     </div>
   );
@@ -37,9 +92,9 @@ export default IndustrialDoorsPage;
 // MakroThermTab.js
 export const MakroThermTab = () => (
   <>
+    <InnovoPanelSection />
     <ContentSection />
     <ContentSectionReversed />
-    <InnovoPanelSection />
   </>
 );
 
