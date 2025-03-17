@@ -49,11 +49,11 @@ const IndustrialDoorsPage = () => {
   console.log(activeTab);
   return (
     <div className="relative w-full h-auto overflow-hidden">
-      <div className="w-full flex mt-48 md:mt-36">
+      <div className="w-full flex flex-col md:flex-row mt-48 md:mt-36 gap-2 md:gap-0">
         <motion.img
           src={links[activeTab]?.first || ""}
           alt="Bramy przemysłowe"
-          className="w-1/3 h-auto object-cover"
+          className="w-full md:w-1/3 h-auto object-cover"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
@@ -61,7 +61,7 @@ const IndustrialDoorsPage = () => {
         <motion.img
           src={links[activeTab]?.second || ""}
           alt="Segmentowe bramy"
-          className="w-1/3 h-auto object-cover"
+          className="w-full md:w-1/3 h-auto object-cover"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9 }}
@@ -69,18 +69,16 @@ const IndustrialDoorsPage = () => {
         <motion.img
           src={links[activeTab]?.third || ""}
           alt="Panel INNOVO 60mm"
-          className="w-1/3 h-auto object-cover"
+          className="w-full md:w-1/3 h-auto object-cover"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
         />
       </div>
 
-      {/* 🔹 Nawigacja zakładek */}
       <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
 
-      {/* 🔹 Treść wybranej zakładki */}
-      <div className=" p-6">{renderTabContent()}</div>
+      <div className="p-6">{renderTabContent()}</div>
 
       <InspirationBottom />
     </div>

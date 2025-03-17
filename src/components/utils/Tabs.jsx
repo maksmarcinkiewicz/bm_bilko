@@ -16,7 +16,7 @@ const Tabs = ({ activeTab, setActiveTab }) => {
         setIsScrollingUp(false);
       }
 
-      setIsAtTop(currentScrollY === 0); // Jeśli scroll na samej górze -> zmień stan
+      setIsAtTop(currentScrollY === 0);
       setLastScrollY(currentScrollY);
     };
 
@@ -27,15 +27,13 @@ const Tabs = ({ activeTab, setActiveTab }) => {
   }, [lastScrollY]);
 
   return (
-    <motion.div
-      className={`fixed left-0 right-0 bg-white shadow-md border-b border-gray-300 transition-all duration-300 z-50 top-20 md:top-24 mt-8 `}
-    >
+    <motion.div className="fixed left-0 right-0 bg-white shadow-md border-b border-gray-300 transition-all duration-300 z-50 top-20 md:top-24 mt-8">
       <div className="container mx-auto px-4 md:px-8 lg:px-24">
-        <div className="flex overflow-x-auto no-scrollbar justify-start md:justify-center items-center py-3 space-x-2 sm:space-x-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 py-3">
           {tabList.map((tab) => (
             <button
               key={tab.id}
-              className={`py-2 px-4 md:px-6 rounded-lg transition-all font-medium text-sm md:text-base whitespace-nowrap ${
+              className={`py-2 px-4 md:px-6 rounded-lg transition-all font-medium text-sm md:text-base whitespace-nowrap text-center ${
                 activeTab === tab.id
                   ? "bg-gray-900 text-white shadow-lg"
                   : "bg-gray-200 text-gray-700 hover:bg-gray-300"
