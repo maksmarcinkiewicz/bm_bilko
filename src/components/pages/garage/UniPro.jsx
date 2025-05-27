@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import InspirationBottom from "../../InspirationBottom";
 import { useState } from "react";
 import SmartConnectedSection from "../../SmartConnectedSection";
+import LightSectionSlider from "./LightSectionSlider"; // dostosuj ścieżkę jeśli trzeba
 
 const UniProBanner = () => {
   const bannerImage =
@@ -14,7 +15,7 @@ const UniProBanner = () => {
         alt="Brama segmentowa UniPro"
         className="w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-gray-700 bg-opacity-50 flex flex-col justify-end items-start text-white px-8 py-16 md:px-24">
+      <div className="absolute inset-0 bg-gray-700 bg-opacity-10 flex flex-col justify-end items-start text-white px-8 py-16 md:px-24">
         <h1 className="text-4xl font-semibold mb-2 ">
           Brama segmentowa UniPro
         </h1>
@@ -67,11 +68,43 @@ const UniProDetails = () => {
       image:
         "https://www.wisniowski.pl/api/preview/68/68506c03-eba6-4819-95af-0852fb4050a8.jpg?w=640&q=75",
     },
+    {
+      title: "Zabezpieczenie przeciążeniowe w bramie automatycznej",
+      description: "",
+      image:
+        "https://www.wisniowski.pl/api/preview/cd/cde374a6-a8ff-4342-8180-fde21db29356.jpg?w=640&q=75",
+    },
+    {
+      title: "Fotokomórki",
+      description: "",
+      image:
+        "https://www.wisniowski.pl/api/preview/bb/bbf1fe95-e043-46ed-abde-17094d1476f3.jpg?w=640&q=75",
+    },
+    {
+      title: "Ciche rolki prowadzące",
+      description: "",
+      image:
+        "https://www.wisniowski.pl/api/preview/b7/b73bff84-169d-4fc4-b119-de6fd4d31cb5.jpg?w=640&q=75",
+    },
+    {
+      title: "Niski próg w drzwiach przejściowych",
+      description: "",
+      image:
+        "https://www.wisniowski.pl/api/preview/62/621a79dc-fcf5-4b4a-90f3-7509be37da22.jpg?w=640&q=75",
+    },
+    {
+      title: "Stoper tworzywowy",
+      description: "",
+      image:
+        "https://www.wisniowski.pl/api/preview/53/534f30b2-4499-4200-9809-b1242175b2d5.jpg?w=640&q=75",
+    },
   ];
 
   return (
     <div className="md:px-24 py-12">
-      <h2 className="text-5xl  mb-8 md:mb-24 px-4 md:px-0">Szczegóły</h2>
+      <h2 className="text-5xl  mb-8 md:mb-24 px-4 md:px-0">
+        Funkcjonalność i bezpieczeństwo
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         {details.map((detail, idx) => (
           <div key={idx} className="flex flex-col overflow-hidden">
@@ -116,6 +149,11 @@ const UniProPatterns = () => {
       title: "Brama z paneli z przetłoczeniami kasetonowymi",
       image:
         "https://www.wisniowski.pl/api/preview/fe/fe629827-ec0d-4db1-8757-c467fec4c17f.png?w=640&q=75",
+    },
+    {
+      title: "Brama z paneli z V-przetłoczeniami",
+      image:
+        "https://www.wisniowski.pl/api/preview/44/44552af8-809e-4a4d-b35c-a88a27bb8139.png?w=640&q=75",
     },
   ];
 
@@ -202,9 +240,9 @@ const UniProStructures = () => {
 const SmartAutomationSlider = () => {
   const slides = [
     {
-      title: "Nowoczesna automatyka",
+      title: "Nowoczesna automatyka SMART",
       description:
-        "Dzięki smartCONNECTED możesz komfortowo sterować bramą z dowolnego miejsca na świecie. Wybierz nowoczesny napęd METRO Smart io, MOTO io lub SPARK i ciesz się z pełnej kontroli nad swoim garażem.",
+        "Dzięki smartCONNECTED możesz komfortowo sterować bramą z dowolnego miejsca naświecie. Wybierz nowoczesny napęd METRO Smart io, MOTO io lub SPARK i ciesz sięz pełnej kontroli nad swoim garażem. Brama spełnia wymagania programu „Czystepowietrze”.",
       image:
         "https://www.wisniowski.pl/api/preview/7a/7ae802ea-ade1-4981-a25c-f8c8a23539a2.jpg?w=1920&q=75",
     },
@@ -291,11 +329,48 @@ const AdditionalFeatures = () => {
       image:
         "https://www.wisniowski.pl/api/preview/3b/3b4982d1-b1f4-4771-94bb-2a6959efb4af.jpg?w=3840&q=95",
     },
+    {
+      title: "Aplikacje ozdobne",
+      description:
+        "To detal, który może całkowicie odmienić design Twojej bramy. Upiększ ją aplikacjami w różnych wzorach i kolorach. Możesz wybierać te naklejane na panele lub pomiędzy przetłoczeniami. Są dostępne w najpopularniejszych kolorach ostatnich sezonów: kolorze stali nierdzewnej, czarne i miedziane.",
+      image:
+        "https://www.wisniowski.pl/api/preview/b5/b554b44b-56a2-446c-a45e-9cb52429a4ab.jpg?w=1920&q=95",
+    },
+    {
+      title: "Klamki",
+      description:
+        "Klamka z zewnątrz podnosi komfort korzystania z bramy, ale stanowi również wzorniczy detal. Jej wygląd może dyskretnie nawiązywać do innych elementów elewacji. Połączenie wzorniczych smaczków i funkcjonalności sprawia, że jest to jedno z najpopularniejszych akcesoriów.",
+      image:
+        "https://www.wisniowski.pl/api/preview/d8/d8164f92-8cf6-47d0-8f08-9d2af115ac24.jpg?w=1920&q=95",
+    },
+    {
+      title: "Uszczelnienie termiczne-wykańczające",
+      description:
+        "Uszczelnienie termiczne-wykańczające to przede wszystkim jeszcze lepsza izolacja i mniejsze straty ciepła, ale również świetne rozwiązanie podnoszące estetykę garażu. Szczególnie w budynkach remontowanych otwory garażowe bywają nierówne lub uszkodzone. Uszczelnienie - dzięki swojej konstrukcji - ukrywa wszelkie niedoskonałości, dając efekt idealnego wykończenia.",
+      image:
+        "https://www.wisniowski.pl/api/preview/be/be5b893c-4c66-4f01-bac0-5af72e4f6b27.jpg?w=1920&q=95",
+    },
+    {
+      title: "Rozwiązania renowacyjne",
+      description:
+        "Bramy UniPro polecamy nie tylko do nowych budynków. To świetne rozwiązanie dla domów remontowanych! Kilka wariantów prowadzeń pozwala dopasować bramę do każdego garażu, a seria maskownic podnosi jego estetykę. Dowiedz się więcej o ",
+      image:
+        "https://www.wisniowski.pl/api/preview/87/8705e7cc-c5e1-430f-95a3-ed61cbe0f499.jpg?w=1920&q=95",
+    },
+    {
+      title: "Drzwiczki dla zwierząt",
+      description:
+        "Zadbaliśmy o komfort Twojego czworonożnego przyjaciela. Skorzystaj z opcji i wybierz produkt z drzwiczkami dla zwierząt. Drzwiczki otwierają się w momencie, kiedy Twój pupil zbliża się do bramy. Dzięki temu może wejść do garażu, by schronić się przed złą pogodą. Wystarczy, że założysz mu specjalną zawieszkę RFID lub mikrochip. Możesz sterować nimi również ręcznie.",
+      image:
+        "https://www.wisniowski.pl/api/preview/16/16e8dd6b-8e54-4f1d-a445-bba10c43800e.jpg?w=1920&q=95",
+    },
   ];
 
   return (
     <div className="md:px-24 px-4 py-12">
-      <h2 className="text-4xl font-semibold mb-8">Dodatkowe funkcje</h2>
+      <h2 className="text-4xl font-semibold mb-8">
+        UniPro - dopasowana do Ciebie
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {features.map((feature, idx) => (
           <div key={idx} className="flex flex-col ">
@@ -314,6 +389,53 @@ const AdditionalFeatures = () => {
     </div>
   );
 };
+
+const Panel40mmSection = () => {
+  return (
+    <section className="w-full bg-white py-20 px-6 md:px-24">
+      <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row gap-12 items-center">
+        {/* Obraz po lewej */}
+        <div className="lg:w-1/2 w-full relative max-w-[600px]">
+          <img
+            src="https://www.wisniowski.pl/api/preview/79/79d59617-ecbd-44c0-8cb9-f0acaa9ca613.jpg?w=1920&q=95"
+            alt="Przekrój panelu"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* Tekst po prawej */}
+        <div className="lg:w-1/2 w-full space-y-6 text-gray-800 text-base leading-relaxed">
+          <h2 className="text-3xl font-normal">Panel 40 mm</h2>
+          <h3 className="text-2xl font-light">
+            Nowoczesne rozwiązanie z dobrą efektywnością energetyczną
+          </h3>
+
+          <div>
+            <h6 className="text-lg font-medium mb-2">
+              Najważniejsze cechy panela 40 mm:
+            </h6>
+            <p>
+              – panel o grubości 40 mm z wypełnieniem z pianki poliuretanowej –{" "}
+              <strong>skuteczna izolacja cieplna i akustyczna</strong>,<br />–
+              materiały wysokiej jakości i uszczelka listkowa gwarantują lepsze{" "}
+              <strong>
+                utrzymanie stałej temperatury i niższe koszty ogrzewania
+              </strong>
+              ,<br />– niski współczynnik przenikania ciepła panelu{" "}
+              <strong>Up = 0,48 W/m²K</strong>
+              <br />– <strong>system 5-krotnego zaginania blachy</strong> –
+              stabilne mocowanie zawiasów, zwiększona trwałość i niezawodność
+              przez długie lata,
+              <br />– <strong>bezpieczny kształt</strong> – eliminuje ryzyko
+              przycięcia palców.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const UniPro = () => {
   return (
     <motion.div
@@ -329,6 +451,9 @@ const UniPro = () => {
 
       <UniProDetails />
       <AdditionalFeatures />
+      <Panel40mmSection />
+      <LightSectionSlider />
+
       <UniProPatterns />
       <UniProStructures />
       <SmartConnectedSection />

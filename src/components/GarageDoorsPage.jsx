@@ -37,16 +37,7 @@ const GarageDoorItem = ({ model, image, description, tags }) => (
     <div className="p-6 flex flex-col justify-between">
       <h3 className="text-2xl font-bold text-[#1F1F1F] mb-4">{model}</h3>
       <p className="text-gray-700 mb-4">{description}</p>
-      <div className="flex flex-wrap gap-2 mb-4">
-        {tags.map((tag, index) => (
-          <span
-            key={index}
-            className="px-3 py-1 bg-gray-200 text-gray-800 text-sm rounded-sm"
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
+
       <Link to={`/bramy-garazowe/${model.toLowerCase()}`}>
         <button className="bg-[#3B3B1D] text-white font-semibold px-6 py-2 rounded-sm shadow-md">
           Dowiedz się więcej
@@ -63,22 +54,19 @@ const garageDoors = [
       "https://www.wisniowski.pl/api/preview/e9/e95654a4-4773-4a2d-bf7a-ccfd97674751.jpg?w=1920&q=75",
     description:
       "Ekskluzywna brama garażowa o wyjątkowym designie. Łączy estetykę z najnowszymi technologiami.",
-    tags: ["Kolory: Antracyt, Czarny", "Funkcje: Automatyka Smart"],
   },
   {
     model: "UniTherm",
     image:
-      "https://www.wisniowski.pl/api/preview/39/393920d4-a135-4f91-a328-2df84f397a54.jpg?w=1920&q=75",
+      "https://www.bartal.pl/wp-content/webp-express/webp-images/uploads/2024/01/Wisniowski-brama-segmentowa-Unitherm-Lublin.jpg.webp",
     description:
       "Nowoczesna brama garażowa o wysokiej izolacji termicznej. Idealna do energooszczędnych domów.",
-    tags: ["Kolory: Biały, Szary, Antracyt", "Wzory: Kaseton, Gładki"],
   },
   {
     model: "UniPro",
     image:
       "https://www.wisniowski.pl/api/preview/2f/2f767200-a2ff-4770-a4f4-7d11893c9c3e.jpg?w=1920&q=75",
     description: "Wszechstronna brama garażowa, odpowiednia dla każdego domu.",
-    tags: ["Kolory: Czerwony, Brązowy", "Wzory: Przetłoczenia poziome"],
   },
 ];
 
@@ -102,7 +90,6 @@ const GarageDoorsPage = () => {
             model={door.model}
             image={door.image}
             description={door.description}
-            tags={door.tags}
           />
         ))}
       </div>
