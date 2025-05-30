@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import InspirationBottom from "../../InspirationBottom";
-
+import PrimeIntroTabs from "./PrimeIntroTabs";
+import SmartConnectedSection from "../../SmartConnectedSection";
+import PrimeBlackEditionVideo from "./PrimeBlackEditionVideo";
 const PrimeBanner = () => {
   const bannerImage =
     "https://www.wisniowski.pl/api/preview/e9/e95654a4-4773-4a2d-bf7a-ccfd97674751.jpg?w=3840&q=75";
@@ -13,7 +15,9 @@ const PrimeBanner = () => {
         className="w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-gray-700 bg-opacity-50 flex flex-col justify-end items-start text-white px-8 py-16 md:px-24">
-        <h1 className="text-4xl font-semibold mb-2 ">Brama segmentowa PRIME</h1>
+        <h1 className="text-4xl font-semibold mb-2 ">
+          Brama segmentowa PRIME z panelem 60mm i konstrukcją malowaną proszkowo
+        </h1>
         <p
           className="text-console.log();
          max-w-lg mb-2"
@@ -41,9 +45,9 @@ const PrimeIntroText = () => (
 const PrimeDetails = () => {
   const details = [
     {
-      title: "Solidna konstrukcja",
+      title: "Solidna konstrukcja malowana proszkowo",
       description:
-        "Konstrukcja bramy wykonana jest z wysokiej jakości ocynkowanej stali, dodatkowo malowanej proszkowo, co zapewnia ochronę przed korozją i trwałość na lata.",
+        "Konstrukcja bramy wykonana jest z wysokiej jakości ocynkowanej stali, dodatkowo malowanej proszkowo, co zapewnia trwałość na lata. i niepowtarzalny design.",
       image:
         "https://www.wisniowski.pl/api/preview/7b/7bc505a9-a41a-4687-b4bd-e02fdb88eab9.jpg?w=640&q=75",
     },
@@ -62,9 +66,23 @@ const PrimeDetails = () => {
         "https://www.wisniowski.pl/api/preview/dc/dc427777-1df6-4485-9720-d6ccb36e2cfb.jpg?w=640&q=75",
     },
     {
+      title: "Malowane elementy konstrukcji",
+      description:
+        "Wewnętrzna strona płaszcza i systemy – prowadzenia, zabezpieczeń oraz podwieszenia – są pomalowane proszkowo w kolorze RAL 9002 lub RAL 9005 (wersja Black Edition). Ta unikalna cecha sprawia, że możesz cieszyć się nowoczesnym designem i estetycznym wykończeniem również w garażu.",
+      image:
+        "https://www.wisniowski.pl/api/preview/86/866f6d94-285c-45fa-a666-c3cb709b4277.jpg?w=1200&q=95",
+    },
+    {
       title: "Bezpieczna automatyka",
       description:
         "Bramę z napędem certyfikowanym dobierając siłę automatyki. Nowoczesny napęd oparty o współpracę ze światową marką SOMFY, wyposażony w amperometrycznego wykrywacza przeszkód. Najwyższe standardy i bezpieczeństwo automatycznej bramy ze znakiem CE.",
+      image:
+        "https://www.wisniowski.pl/api/preview/95/95e2199b-0a31-4ed7-ac03-633f7a454927.jpg?w=640&q=75",
+    },
+    {
+      title: "Steruj z aplikacji ",
+      description:
+        "Ciesz się wygodą i nowoczesnością inteligentnego domu bez potrzeby instalowania dodatkowych urządzeń sterujących. Dzięki wbudowanemu modułowi Wi-Fi, bramą garażową z napędem SPARK można sterować bezpośrednio za pomocą aplikacji WIŚNIOWSKI Connected na smartfonie.",
       image:
         "https://www.wisniowski.pl/api/preview/95/95e2199b-0a31-4ed7-ac03-633f7a454927.jpg?w=640&q=75",
     },
@@ -72,7 +90,15 @@ const PrimeDetails = () => {
 
   return (
     <div className="md:px-24 py-12 px-4">
-      <h2 className="text-5xl  mb-8 md:mb-24">Szczegóły</h2>
+      <h2 className="text-5xl  mb-8 md:mb-24">
+        Bezpieczeństwo i desing w klasie premium
+      </h2>
+      <p>
+        Brama PRIME nie ma sobie równych, jeśli chodzi o budowę i
+        funkcjonalność, ale przede wszystkim o Twoje bezpieczeństwo. Rozbudowany
+        system zabezpieczeń i pakiet antywłamaniowy dają pewność, której
+        potrzebujesz. PRIME to brama dla wyjątkowych domów.
+      </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {details.map((detail, idx) => (
           <div key={idx} className="flex flex-col md:flex-row overflow-hidden">
@@ -236,10 +262,12 @@ const PrimePage = () => {
     >
       <PrimeBanner />
       <PrimeIntroText />
+      <PrimeIntroTabs />
       <PrimeDetails />
-      <PrimeDetailSection />
+      <PrimeBlackEditionVideo />
       <PrimePatterns />
       <PrimeStructures />
+      <SmartConnectedSection />
       <InspirationBottom />
     </motion.div>
   );

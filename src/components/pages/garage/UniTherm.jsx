@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import InspirationBottom from "../../InspirationBottom";
+import { useState } from "react";
+import SmartConnectedSection from "../../SmartConnectedSection";
 
 const UniThermBanner = () => {
   const bannerImage =
-    "https://www.wisniowski.pl/api/preview/39/393920d4-a135-4f91-a328-2df84f397a54.jpg?w=1920&q=75";
+    "https://www.bartal.pl/wp-content/webp-express/webp-images/uploads/2024/01/Wisniowski-brama-segmentowa-Unitherm-Lublin.jpg.webp";
 
   return (
     <div className="relative w-full h-[650px] overflow-hidden">
@@ -14,7 +16,7 @@ const UniThermBanner = () => {
       />
       <div className="absolute inset-0 bg-gray-700 bg-opacity-50 flex flex-col justify-end items-start text-white px-8 py-16 md:px-24">
         <h1 className="text-4xl font-semibold mb-2 ">
-          Brama segmentowa UniTherm
+          Brama segmentowa UniTherm z panelem 60mm
         </h1>
         <p
           className="text-console.log();
@@ -22,6 +24,92 @@ const UniThermBanner = () => {
         >
           Łączy wieloletnią trwałość i niezawodność z energooszczędnością.
         </p>
+      </div>
+    </div>
+  );
+};
+
+const Panel40mmSection = () => {
+  return (
+    <section className="w-full bg-white py-20 px-6 md:px-24">
+      <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row gap-12 items-center">
+        {/* Obraz po lewej */}
+        <div className="lg:w-1/2 w-full relative max-w-[600px]">
+          <img
+            src="https://www.wisniowski.pl/api/preview/1f/1ffe08a1-d887-4a91-9e27-0f52093112af.jpg?w=1080&q=95"
+            alt="Przekrój panelu"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* Tekst po prawej */}
+        <div className="lg:w-1/2 w-full space-y-6 text-gray-800 text-base leading-relaxed">
+          <h2 className="text-3xl font-normal">Panel INNOVO 60mm</h2>
+
+          <p>
+            Płaszcz bram MakroTherm zbudowany jest z paneli INNOVO o grubości 60
+            mm i współczynniku przenikania ciepła U=0,33 [W/m2xK]. Dzięki
+            zastosowaniu termoizolowanych paneli oraz systemów uszczelnień,
+            wyeliminowaliśmy straty ciepła w najbardziej newralgicznych
+            miejscach.
+          </p>
+
+          <ul className="list-disc list-inside space-y-2">
+            <li>Ukryte, niewidoczne zawiasy..</li>
+            <li>Elastyczna osłona międzypanelowa.</li>
+            <li>Pięć warstw blachy w miejscu mocowania zawiasów.</li>
+            <li>Uszczelnienie międzypanelowe.</li>
+            <li>60 mm piany poliuretanowaej</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const SmartAutomationSlider = () => {
+  const slides = [
+    {
+      title: "Najwyższa termoizolacja",
+      description:
+        "W pełni wykorzystuje właściwości konstrukcyjne panelu INNOVO 60 mm, tym samym ograniczając straty ciepła. Na uwagę zasługuje również dopracowany system uszczelnień: międzypanelowych, bocznych, górnych i dolnych. Jest doskonała do budynków energooszczędnych. Przy jej zakupie możesz uzyskać dofinansowanie z programu “Czyste Powietrze”.",
+      image:
+        "https://www.wisniowski.pl/api/preview/9f/9fe4cd31-550c-44ea-b609-2a9be8c94cfb.jpg?w=1920&q=75",
+    },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  return (
+    <div className="md:px-24 px-4 py-12">
+      <div className="relative flex flex-col items-center gap-8">
+        <motion.img
+          key={currentIndex}
+          src={slides[currentIndex].image}
+          alt={slides[currentIndex].title}
+          className="w-full md:h-[500px] rounded-sm  object-cover"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -50 }}
+          transition={{ duration: 0.5 }}
+        />
+        <div className="">
+          <h2 className="text-4xl mb-4">{slides[currentIndex].title}</h2>
+          <p className="text-gray-700 mb-4 text-xl">
+            {slides[currentIndex].description}
+          </p>
+          <div className="flex gap-2">
+            {slides.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`w-16 h-4  rounded-sm transition-all ${
+                  idx === currentIndex ? "bg-gray-600" : "bg-gray-300"
+                }`}
+              ></button>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -63,6 +151,43 @@ const UniThermDetails = () => {
       description: "",
       image:
         "https://www.wisniowski.pl/api/preview/eb/eb63d8bd-65ea-487d-aad8-8b4a84b3bb04.jpg?w=640&q=75",
+    },
+    {
+      title: "Tandemowe łożyskowane rolki",
+      description: "",
+      image:
+        "https://www.wisniowski.pl/api/preview/50/50d28335-e244-4fd6-97cb-1172f5e37ae2.jpg?w=640&q=75",
+    },
+    {
+      title: "Bezpieczny kształt panelu",
+      description: "",
+      image:
+        "https://www.wisniowski.pl/api/preview/50/50d28335-e244-4fd6-97cb-1172f5e37ae2.jpg?w=640&q=75",
+    },
+    {
+      title: "Fotokomórki",
+      description: "opcja dodatkowa",
+      image:
+        "https://www.wisniowski.pl/api/preview/a8/a8b3fc77-58ec-4d94-8a77-4fc6e5700e54.jpg?w=640&q=75",
+    },
+    {
+      title: "Ciche ukryte zawiasy",
+      description: "",
+      image:
+        "https://www.wisniowski.pl/api/preview/8d/8d1fa7a6-bf69-46e4-be45-0ae84d7ab1d1.jpg?w=640&q=75",
+    },
+    {
+      title: "Elastyczne wewnętrzne osłony międzypanelowe",
+      description: "",
+      image:
+        "https://www.wisniowski.pl/api/preview/83/8332ae82-647f-4d66-a481-19d11dc5e2ab.jpg?w=640&q=75",
+    },
+    {
+      title: "Stoper tworzywowy",
+      description:
+        "Poprawia szczelność bramy oraz pełni funkcję ogranicznika zatrzymującego skrzydło",
+      image:
+        "https://www.wisniowski.pl/api/preview/53/534f30b2-4499-4200-9809-b1242175b2d5.jpg?w=640&q=75",
     },
   ];
 
@@ -231,10 +356,12 @@ const UniTherm = () => {
     >
       <UniThermBanner />
       <UniThermIntroText />
+      <Panel40mmSection />
       <UniThermDetails />
       <UniThermDetailSection />
       <UniThermPatterns />
       <UniThermStructures />
+      <SmartConnectedSection />
       <InspirationBottom />
     </motion.div>
   );

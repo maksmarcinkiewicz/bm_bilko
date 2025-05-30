@@ -350,8 +350,18 @@ const AutomationControlFeaturesSection = () => {
 };
 const AutomationSommerSection = () => {
   return (
-    <div className="w-full bg-gray-100 py-16">
-      <div className="container mx-auto px-8 md:px-24 lg:px-32 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <div className="w-full bg-gray-100">
+      {/* Hero image */}
+      <div className="w-full h-[400px] md:h-[600px] relative overflow-hidden">
+        <img
+          src="https://www.wisniowski.pl/api/preview/64/64619aeb-1a9c-4a62-9f31-f794e4d7d15a.jpg?w=3840&q=95"
+          alt="Automatyka SOMMER Hero"
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="py-16 container mx-auto px-8 md:px-24 lg:px-32 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Text Section */}
         <div>
           <h1 className="text-4xl font-bold mb-6">Automatyka SOMMER</h1>
@@ -407,7 +417,7 @@ const AutomationSommerSection = () => {
         {/* Image Section */}
         <div className="flex justify-center">
           <img
-            src="https://www.wisniowski.pl/api/preview/cc/cc2375eb-8cc5-4966-ab77-623d719939bb.png?w=1080&q=95" // Replace with actual image URL
+            src="https://www.wisniowski.pl/api/preview/cc/cc2375eb-8cc5-4966-ab77-623d719939bb.png?w=1080&q=95"
             alt="Automatyka SOMMER Base+ i tiga+"
             className="w-full h-auto object-contain"
           />
@@ -416,6 +426,7 @@ const AutomationSommerSection = () => {
     </div>
   );
 };
+
 // Content Section Component
 const ContentSection = () => {
   const bannerImage =
@@ -512,6 +523,10 @@ const ContentSectionReversed = () => {
             <h2 className="text-3xl font-semibold mb-6">
               Brama MakroTherm XXL
             </h2>
+            <p className="text-lg leading-relaxed mb-4">
+              Maksymalne gabaryty - nawet 10 metrów szerokości i 5 metrów
+              wysokości
+            </p>
             <p className="text-lg leading-relaxed mb-4">
               Bramy MakroTherm XXL zbudowane są z ultraciepłych paneli stalowych
               o grubości 60 [mm] wypełnionych pianką poliuretanową.
