@@ -6,23 +6,18 @@ import HeroSlider1Img from "../assets/hero-slider-1.jpg";
 // Import stylów Swiper.js
 import "swiper/css";
 import "swiper/css/navigation";
+import { Link } from "react-router-dom";
 
 function HeroCarousel() {
   const slides = [
     {
-      title: "Okna i drzwi przesuwne",
+      title: "Bramy garażowe",
       description:
-        "Poznaj rozwiązania, które łączą design i funkcjonalność. Idealne do Twojego domu lub biura!",
-      buttonText: "Zobacz więcej",
-      imageUrl: HeroSlider1Img,
-    },
-    {
-      title: "Bramy garażowe i przemysłowe",
-      description:
-        "Odkryj bramy garażowe i przemysłowe, które wyróżniają się niezawodnością i nowoczesnym stylem.",
+        "Odkryj bramy garażowe, które wyróżniają się niezawodnością i nowoczesnym stylem.",
       buttonText: "Sprawdź ofertę",
       imageUrl:
         "https://sklep.wisniowski.pl/img/banery/WebP/segmentowe-bramy-garazowe.webp",
+      urlLink: "/bramy-garazowe",
     },
     {
       title: "Inteligentny dom",
@@ -31,6 +26,7 @@ function HeroCarousel() {
       buttonText: "Dowiedz się więcej",
       imageUrl:
         "https://sklep.wisniowski.pl/img/banery/WebP/drzwi-Creo-WISNIOWSKI.webp",
+      urlLink: "/inteligentny-dom",
     },
     {
       title: "Ogrodzenia",
@@ -39,7 +35,15 @@ function HeroCarousel() {
       buttonText: "Zobacz naszą ofertę",
       imageUrl:
         "https://sklep.wisniowski.pl/img/banery/WebP/swiat-ogrodzen.webp",
+      urlLink: "/ogrodzenia",
     },
+    // {
+    //   title: "Okna i drzwi przesuwne",
+    //   description:
+    //     "Poznaj rozwiązania, które łączą design i funkcjonalność. Idealne do Twojego domu lub biura!",
+    //   buttonText: "Zobacz więcej",
+    //   imageUrl: HeroSlider1Img,
+    // },
   ];
 
   const swiperRef = useRef(null); // Referencja do instancji Swipera
@@ -74,9 +78,12 @@ function HeroCarousel() {
                     {slide.title}
                   </h1>
                   <p className="text-md text-left mb-6">{slide.description}</p>
-                  <button className="border-[#3B3B1D] border-2 font-semibold text-[#3B3B1D] rounded-sm px-4 py-1 shadow-sm hover:bg-[#3B3B1D] hover:text-white transition">
+                  <Link
+                    className="border-[#3B3B1D] border-2 font-semibold text-[#3B3B1D] rounded-sm px-4 py-1 shadow-sm hover:bg-[#3B3B1D] hover:text-white transition"
+                    to={slide.urlLink}
+                  >
                     {slide.buttonText}
-                  </button>
+                  </Link>
                 </div>
                 {/* Obraz slajdu */}
                 <div className="image md:w-1/2 md:mt-0">

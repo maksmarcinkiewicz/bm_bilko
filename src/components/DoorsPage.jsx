@@ -3,6 +3,11 @@ import { useRef } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import InspirationBottom from "./InspirationBottom";
 const DoorsPage = () => {
+  const woodenSectionRef = useRef(null);
+
+  const goToWooden = () => {
+    woodenSectionRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <motion.div
       className="bg-gray-100 text-gray-800"
@@ -11,34 +16,128 @@ const DoorsPage = () => {
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.5 }}
     >
+      <button
+        onClick={goToWooden}
+        className="sticky top-32 left-0 w-72 bg-white/90 backdrop-blur flex flex-col items-center py-2 z-50 shadow-md"
+      >
+        <span className="text-sm font-bold uppercase tracking-widest">
+          Drzwi drewniane
+        </span>
+        <span className="text-xs text-gray-600">Realizacje</span>
+      </button>
       <HeroSectionCreo />
+      <div className="w-full overflow-hidden">
+        <img
+          src="https://www.wisniowski.pl/api/preview/d4/d41f2a75-636e-4a57-9857-715fe5c4a043.jpg?w=1920&q=75"
+          alt="Drzwi Creo – dodatkowa prezentacja"
+          className="w-2/3 h-full mt-4 md:mt-8"
+        />
+      </div>
       <ModelsSection title="Kolekcja CREO" models={creoModels} />
       <HeroSectionNova />
+      <div className="w-full overflow-hidden">
+        <img
+          src="https://s3.eu-central-1.amazonaws.com/pressland-cms/cache/article_show_section_image/ni/render-nova-015.jpeg"
+          alt="Drzwi Creo – dodatkowa prezentacja"
+          className="w-2/3 h-full mt-4 md:mt-8"
+        />
+      </div>
       <ModelsSection title="Kolekcja NOVA" models={novaModels} />
       <ModelsSection title="Kolekcja Glass Line" models={glassLineModels} />
       <HeroSectionPirue />
+      <div className="w-full overflow-hidden">
+        <img
+          src="https://www.wisniowski.pl/api/preview/37/37bf3f2a-812a-4ca1-ad26-aae5d42658a8.jpg?w=1920&q=100"
+          alt="Drzwi Creo – dodatkowa prezentacja"
+          className="w-2/3 h-full mt-4 md:mt-8"
+        />
+      </div>
       <ModelsSection title="Kolekcja PIRUE" models={pirueModels} />
+      <HeroSectionNobe />
+      <div className="w-full overflow-hidden">
+        <img
+          src="https://www.wisniowski.pl/api/preview/34/341ced78-85b5-4a39-b7eb-779cefbd8ac0.jpg?w=1920&q=75"
+          alt="Drzwi Creo – dodatkowa prezentacja"
+          className="w-2/3 h-full mt-4 md:mt-8"
+        />
+      </div>
+      <ModelsSection title="Kolekcja NOBE" models={nobeModels} />
+      {/* --- sekcja Realizacje – drzwi drewniane --- */}
+      <section ref={woodenSectionRef} className="py-16 bg-gray-100">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl font-extrabold text-center mb-8"
+        >
+          Realizacje — drzwi drewniane
+        </motion.h2>
+
+        {/* podmień src na swoje zdjęcia realizacji */}
+        <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-8 gap-6 px-4">
+          {[
+            "https://i.postimg.cc/QxDg2WRJ/image.png",
+            "https://i.postimg.cc/tRFR117f/image.png",
+            "https://i.postimg.cc/xTR0RWv3/image.png",
+            "https://i.postimg.cc/4xxXFBwk/image.png",
+            "https://i.postimg.cc/R0j9h9m4/image.png",
+            "https://i.postimg.cc/Gtj1Xyym/image.png",
+            "https://i.postimg.cc/pX2vpqwh/image.png",
+            "https://i.postimg.cc/xTt2HLQs/image.png",
+            "https://i.postimg.cc/N0rqWVHV/image.png",
+            "https://i.postimg.cc/k4Qr5bwv/image.png",
+            "https://i.postimg.cc/90C6wQn5/image.png",
+            "https://i.postimg.cc/bNNXzdn1/image.png",
+            "https://i.postimg.cc/GhMW9rPV/image.png",
+            "https://i.postimg.cc/pL43YZ6B/image.png",
+            "https://i.postimg.cc/3wGVLGMQ/image.png",
+            "https://i.postimg.cc/hjqwNGgz/image.png",
+            "https://i.postimg.cc/sxjLD0M3/image.png",
+            "https://i.postimg.cc/yxLbJXRc/image.png",
+            "https://i.postimg.cc/PfycFh7J/image.png",
+            "https://i.postimg.cc/GhSfdKd1/image.png",
+            "https://i.postimg.cc/XYRDyvrH/image.png",
+            "https://i.postimg.cc/zB5t0PST/image.png",
+            "https://i.postimg.cc/nzkd5Y0g/image.png",
+          ].map((src, i) => (
+            <motion.img
+              key={i}
+              src={src}
+              alt={`Realizacja ${i + 1}`}
+              className="h-64 object-contain rounded-lg shadow-lg"
+              whileHover={{ scale: 1.05 }}
+            />
+          ))}
+        </div>
+      </section>
+      <HeroSectionCal />
+      <ModelsSection2 title="Kolekcja CAL" models={calModels} />
+
       <InspirationBottom />
     </motion.div>
   );
 };
 
 const HeroSectionCreo = () => (
-  <div
-    className="relative bg-cover bg-center h-[80vh] flex items-center justify-center"
-    style={{
-      backgroundImage:
-        "url('https://www.wisniowski.pl/api/preview/72/724aaa54-9865-4b67-88d7-17e8264f5b59.jpg?w=1920&q=75')",
-    }}
-  >
-    <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-    <div className="relative text-center text-white">
-      <h1 className="text-5xl font-extrabold mb-6 drop-shadow-lg">
-        Drzwi wejściowe CREO
-      </h1>
-      <p className="text-lg font-light max-w-2xl mx-auto drop-shadow-lg">
-        Łączą w sobie wysoką termoizolację z bezpieczeństwem i Twoją wizją domu.
-      </p>
+  <div>
+    {/* -- główny hero */}
+    <div
+      className="relative bg-cover bg-center h-[80vh] flex items-center justify-center"
+      style={{
+        backgroundImage:
+          "url('https://www.wisniowski.pl/api/preview/72/724aaa54-9865-4b67-88d7-17e8264f5b59.jpg?w=1920&q=75')",
+      }}
+    >
+      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      <div className="relative text-center text-white px-4">
+        <h1 className="text-5xl font-extrabold mb-6 drop-shadow-lg">
+          Drzwi wejściowe CREO
+        </h1>
+        <p className="text-lg font-light max-w-2xl mx-auto drop-shadow-lg">
+          Łączą w sobie wysoką termoizolację z bezpieczeństwem i Twoją wizją
+          domu.
+        </p>
+      </div>
     </div>
   </div>
 );
@@ -83,6 +182,37 @@ const HeroSectionPirue = () => (
         niezrównanej funkcjonalności. Zawias PIVOT umożliwia płynne otwieranie
         drzwi o największych gabarytach.
       </p>
+    </div>
+  </div>
+);
+
+const HeroSectionNobe = () => (
+  <div
+    className="relative bg-cover bg-center h-[80vh] flex items-center justify-center"
+    style={{
+      backgroundImage:
+        "url('https://www.wisniowski.pl/api/preview/dd/dd9cff9e-91a2-4e6e-83cf-cc4b3a79fa57.jpg?w=1920&q=75')",
+    }}
+  >
+    <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div className="relative text-center text-white">
+      <h1 className="text-5xl font-extrabold mb-6 drop-shadow-lg">
+        Drzwi wejściowe NOBE
+      </h1>
+      <p className="text-lg font-light max-w-2xl mx-auto drop-shadow-lg">
+        Łączą w sobie solidną konstrukcję i rozwiązania dla bezpieczeństwa z
+        nowoczesnym designem.
+      </p>
+    </div>
+  </div>
+);
+
+const HeroSectionCal = () => (
+  <div className="relative bg-cover bg-center h-[40vh] flex items-center justify-center">
+    <div className="relative text-center text-black">
+      <h1 className="text-5xl font-extrabold mb-6 drop-shadow-lg">
+        Drzwi zewnętrzne drewniane CAL
+      </h1>
     </div>
   </div>
 );
@@ -139,6 +269,72 @@ const ModelsSection = ({ title, models }) => {
             >
               <img
                 src={`https://www.wisniowski.pl${model.image}`}
+                alt={model.name}
+                className="h-96 object-cover rounded-t-lg"
+              />
+              <h3 className="text-lg md:text-xl font-bold mt-3 mb-2">
+                {model.name}
+              </h3>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const ModelsSection2 = ({ title, models }) => {
+  const scrollRef = useRef(null);
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const { scrollLeft, clientWidth } = scrollRef.current;
+      const scrollAmount = clientWidth * 0.6; // Przewija o 60% szerokości ekranu
+      if (direction === "left") {
+        scrollRef.current.scrollTo({
+          left: scrollLeft - scrollAmount,
+          behavior: "smooth",
+        });
+      } else {
+        scrollRef.current.scrollTo({
+          left: scrollLeft + scrollAmount,
+          behavior: "smooth",
+        });
+      }
+    }
+  };
+
+  return (
+    <section className="bg-white py-16 relative">
+      <div className="container mx-auto text-center">
+        <h2 className="text-4xl font-extrabold mb-6">{title}</h2>
+
+        {/* Strzałki do przesuwania */}
+        <button
+          onClick={() => scroll("left")}
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-300 p-3 rounded-full shadow-md hover:bg-gray-400 hidden md:flex"
+        >
+          <FiChevronLeft size={24} />
+        </button>
+        <button
+          onClick={() => scroll("right")}
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-300 p-3 rounded-full shadow-md hover:bg-gray-400 hidden md:flex"
+        >
+          <FiChevronRight size={24} />
+        </button>
+
+        {/* Karuzela modeli */}
+        <div
+          ref={scrollRef}
+          className="overflow-x-scroll no-scrollbar flex space-x-6 px-4 md:px-12 py-4 scroll-smooth snap-x"
+        >
+          {models.map((model, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 bg-gray-50 rounded-lg shadow-lg text-center p-4"
+            >
+              <img
+                src={`${model.image}`}
                 alt={model.name}
                 className="h-96 object-cover rounded-t-lg"
               />
@@ -322,10 +518,7 @@ const novaModels = [
     image: "/api/preview/01/01af3d1a-7702-474f-86fe-d12cc4c50904.jpg",
     name: "NOVA | 005",
   },
-  {
-    image: "/api/preview/0f/0f59589d-28e4-48b9-849c-5b43cf66d5e4.jpg",
-    name: "NOVA | 006",
-  },
+
   {
     image: "/api/preview/10/104049c1-9e35-47f9-ac3e-9a20e729a8e8.jpg",
     name: "NOVA | 007",
@@ -366,30 +559,17 @@ const novaModels = [
     image: "/api/preview/8e/8e71b590-3896-4354-b0d4-ccd658212bc4.jpg",
     name: "NOVA | 016",
   },
-  {
-    image: "/api/preview/38/3857315a-afb6-4e72-bcd5-030dc67afb16.jpg",
-    name: "NOVA | 017",
-  },
+
   {
     image: "/api/preview/32/322e09aa-6b34-4bcf-9543-0f9918d58e8d.jpg",
     name: "NOVA | 018",
   },
-  {
-    image: "/api/preview/d2/d2349eba-a5ca-4653-a8ff-83033a2e0cca.jpg",
-    name: "NOVA | 019",
-  },
+
   {
     image: "/api/preview/76/76296d6a-4504-486c-9ba1-f9c173c091ea.jpg",
     name: "NOVA | 020",
   },
-  {
-    image: "/api/preview/8d/8d3d05fe-26e1-40a4-9487-3317a33f5385.jpg",
-    name: "NOVA | 021",
-  },
-  {
-    image: "/api/preview/2b/2b1c5b16-2488-426c-a504-1911bc7af839.jpg",
-    name: "NOVA | 022",
-  },
+
   {
     image: "/api/preview/ce/ce7dce2f-cf57-4226-8f9e-2b34eec5581d.jpg",
     name: "NOVA | 023",
@@ -402,10 +582,7 @@ const novaModels = [
     image: "/api/preview/dd/dd8313cd-43c5-4a6b-8a11-f685da89c015.jpg",
     name: "NOVA | 025",
   },
-  {
-    image: "/api/preview/db/db91c8d1-1bf1-458e-8f3c-ee47aabcb826.jpg",
-    name: "NOVA | 026",
-  },
+
   {
     image: "/api/preview/60/609a82d8-5849-429c-8e48-a0bc47474b5a.jpg",
     name: "NOVA | 027",
@@ -418,10 +595,7 @@ const novaModels = [
     image: "/api/preview/c6/c61e0d58-96c3-4ecd-95bf-c2358a62f71e.jpg",
     name: "NOVA | 029",
   },
-  {
-    image: "/api/preview/ff/ffb1cd0e-388b-4634-a051-e2004e36e98a.jpg",
-    name: "NOVA | 030",
-  },
+
   {
     image: "/api/preview/72/7208dd67-bb54-4fd5-8eb4-e296aded85c2.jpg",
     name: "NOVA | 031",
@@ -442,10 +616,7 @@ const novaModels = [
     image: "/api/preview/62/626b62e8-acaf-4730-bd8c-afd3fb51ac79.jpg",
     name: "NOVA | 035",
   },
-  {
-    image: "/api/preview/54/54852b24-411f-4e15-9c03-6a362dc2fe67.jpg",
-    name: "NOVA | 036",
-  },
+
   {
     image: "/api/preview/54/5465c54f-00eb-4746-a428-24bb5a2e9881.jpg",
     name: "NOVA | 037",
@@ -457,6 +628,91 @@ const novaModels = [
   {
     image: "/api/preview/f4/f43e4c54-9730-4315-bf92-fe8fe1543946.jpg",
     name: "NOVA | 039",
+  },
+  {
+    image:
+      "/api/preview/46/46d8a065-f43c-4e26-a726-12171513ab5a.jpg?w=1920&q=95",
+    name: "NOVA | 044",
+  },
+  {
+    image:
+      "/api/preview/05/058c235b-ea3b-438d-8476-e83907a2151b.jpg?w=1920&q=95",
+    name: "NOVA | 045",
+  },
+  {
+    image:
+      "/api/preview/81/81cfe4b5-de60-4bf9-9e90-7abad58d6d2d.jpg?w=1920&q=95",
+    name: "NOVA | 046",
+  },
+  {
+    image:
+      "/api/preview/88/88679008-87ff-4a86-be00-c4f303599014.jpg?w=1920&q=95",
+    name: "NOVA | 047",
+  },
+  {
+    image:
+      "/api/preview/23/23282cc9-0564-483a-b7cc-41acf79a50c9.jpg?w=1920&q=95",
+    name: "NOVA | U01",
+  },
+  {
+    image:
+      "/api/preview/72/72cbaaee-ec83-4cd5-a142-db3073e11ed6.jpg?w=1920&q=95",
+    name: "NOVA | U02",
+  },
+  {
+    image:
+      "/api/preview/ef/ef5fb642-44a2-4b1c-b622-f6e7269f9009.jpg?w=1920&q=95",
+    name: "NOVA | U03",
+  },
+  {
+    image:
+      "/api/preview/4c/4c0827fa-c810-49cb-9580-dec4586cf009.jpg?w=1920&q=95",
+    name: "NOVA | U04",
+  },
+  {
+    image:
+      "/api/preview/9d/9d74668d-e224-4e5f-a4c4-abb1fd56dec8.jpg?w=1920&q=95",
+    name: "NOVA | U05",
+  },
+  {
+    image:
+      "/api/preview/d9/d9bd7017-cd0f-4121-b5a9-a22ad5657d53.jpg?w=1920&q=95",
+    name: "NOVA | R01",
+  },
+  {
+    image:
+      "/api/preview/8c/8c9d8cd7-2212-46d1-bba4-113c6ed157ca.jpg?w=1920&q=95",
+    name: "NOVA | R01S",
+  },
+  {
+    image:
+      "/api/preview/f2/f29b7bfd-1855-4e77-8e9f-cc34ff498df6.jpg?w=1920&q=95",
+    name: "NOVA | R02",
+  },
+  {
+    image:
+      "/api/preview/32/32490a4e-2ab5-4b71-888a-5c3c37681c1b.jpg?w=1920&q=95",
+    name: "NOVA | R02S",
+  },
+  {
+    image:
+      "/api/preview/f0/f0db5e70-2993-4cda-b646-5f6f06743f54.jpg?w=1920&q=95",
+    name: "NOVA | R03",
+  },
+  {
+    image:
+      "/api/preview/c3/c3699e78-2bde-4f4d-8c83-10ae298205ce.jpg?w=1920&q=95",
+    name: "NOVA | R03S",
+  },
+  {
+    image:
+      "/api/preview/39/39d6d892-0d5b-4ef9-8bac-945ec8e1a6e2.jpg?w=1920&q=95",
+    name: "NOVA | R04",
+  },
+  {
+    image:
+      "/api/preview/63/634ff550-bbd7-4abd-b2f0-0fc8e58b74d7.jpg?w=1920&q=95",
+    name: "NOVA | R04S",
   },
 ];
 
@@ -519,6 +775,117 @@ const pirueModels = [
   {
     image: "/api/preview/9f/9ff9727e-5646-4362-b832-812b9f23f02c.jpg",
     name: "PIRUE | 102",
+  },
+];
+
+const nobeModels = [
+  {
+    image: "/api/preview/ef/efa6333a-860c-4f71-8b66-5e06e6da42af.jpg",
+    name: "PIRUE | 001",
+  },
+  {
+    image: "/api/preview/4e/4e5c7854-7475-4052-af11-4d354221430e.jpg",
+    name: "NOBE | 100",
+  },
+  {
+    image: "/api/preview/9f/9fefb21e-9978-4f77-9f9e-750ace9eebb0.jpg",
+    name: "NOBE | 101",
+  },
+  {
+    image: "/api/preview/c9/c9af078b-c5ba-42b0-8afa-3e8b4fccd209.jpg",
+    name: "NOBE | 102",
+  },
+  {
+    image: "/api/preview/36/36f9ad25-2023-46e8-9cf6-6dd1720795f3.jpg",
+    name: "NOBE | 103",
+  },
+  {
+    image: "/api/preview/76/76b39de4-c571-4d3f-9a3c-f5a1eb2eb05e.jpg",
+    name: "NOBE | 104",
+  },
+  {
+    image: "/api/preview/0b/0bdf5884-362c-4752-8cf3-c3edcf2de0fb.jpg",
+    name: "NOBE | 105",
+  },
+  {
+    image: "/api/preview/6d/6d94c029-2198-4aee-ab7b-bcfea0a73a53.jpg",
+    name: "NOBE | 106",
+  },
+  {
+    image: "/api/preview/bd/bdd2a956-2d63-4ba2-9f5d-8e8c2244524c.jpg",
+    name: "NOBE | 107",
+  },
+  {
+    image: "/api/preview/81/81c157bb-b40e-424a-bdac-6afe1bd3f1c5.jpg",
+    name: "NOBE | 108",
+  },
+  {
+    image: "/api/preview/fc/fcc5fa1c-513a-42ad-9a47-2f289f717973.jpg",
+    name: "NOBE | 109",
+  },
+  {
+    image: "/api/preview/4a/4a19db63-4402-4a1e-be41-860513fead4c.jpg",
+    name: "NOBE | 110",
+  },
+  {
+    image: "/api/preview/2f/2f82d014-56ac-4152-862a-472628e4f8fe.jpg",
+    name: "NOBE | 111",
+  },
+  {
+    image: "/api/preview/bd/bd357224-d046-44b9-b7fe-96d6b940d428.jpg",
+    name: "NOBE | 112",
+  },
+  {
+    image: "/api/preview/44/44860734-2c1e-4be4-b402-57a3916b2bc6.jpg",
+    name: "NOBE | 113",
+  },
+  {
+    image: "/api/preview/79/795cb981-47a6-4def-84cd-8acf606c26b5.jpg",
+    name: "NOBE | 114",
+  },
+  {
+    image: "/api/preview/fd/fd6d7f0f-042f-4cba-b570-1ed5e2cf4829.jpg",
+    name: "NOBE | 115",
+  },
+];
+
+const calModels = [
+  {
+    image:
+      "https://www.drzwi-cal.pl/wp-content/uploads/2023/04/2fd5b861-fc1f-4cf6-b27a-05094ab6fc4a-960x700.jpg",
+    name: "Vintage",
+  },
+  {
+    image:
+      "https://www.drzwi-cal.pl/wp-content/uploads/2020/09/kolora-960x700.jpg",
+    name: "Kolora",
+  },
+  {
+    image:
+      "https://www.drzwi-cal.pl/wp-content/uploads/2023/07/arche_zielonkawa_wiz-960x700.jpg",
+    name: "Idylla",
+  },
+  {
+    image: "https://www.drzwi-cal.pl/wp-content/uploads/2019/02/alutherm-1.jpg",
+    name: "Alutherm",
+  },
+  {
+    image: "https://www.drzwi-cal.pl/wp-content/uploads/2019/02/rycerska.jpg",
+    name: "Rycerska",
+  },
+  {
+    image:
+      "https://www.drzwi-cal.pl/wp-content/uploads/2023/04/b2d4eb87-3b38-4f7f-aedb-a150f3cac679-960x700.jpg",
+    name: "Muzyczna",
+  },
+  {
+    image:
+      "https://www.drzwi-cal.pl/wp-content/uploads/2021/03/zlicv4_2019_08_13a-960x700.jpg",
+    name: "Arbo",
+  },
+  {
+    image: "https://www.drzwi-cal.pl/wp-content/uploads/2019/02/klasyczna.jpg",
+    name: "Klasyczna",
   },
 ];
 

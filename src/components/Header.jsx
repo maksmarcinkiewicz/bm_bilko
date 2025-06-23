@@ -95,13 +95,13 @@ const NavMenu = ({ isOpen, currentPath, closeMenu }) => (
 );
 
 const navLinks = [
-  { text: "Okna i drzwi", to: "/okna-i-drzwi" },
+  // { text: "Okna i drzwi", to: "/okna-i-drzwi" },
   { text: "Bramy garażowe", to: "/bramy-garazowe" },
   { text: "Bramy przemysłowe", to: "/bramy-przemyslowe" },
   { text: "Drzwi zewnętrzne", to: "/drzwi-zewnetrzne" },
-  { text: "Rolety i żaluzje", to: "/rolety-i-zaluzje" },
+  // { text: "Rolety i żaluzje", to: "/rolety-i-zaluzje" },
   { text: "Ogrodzenia", to: "/ogrodzenia" },
-  { text: "Ogrody zimowe", to: "/ogrody-zimowe" },
+  // { text: "Ogrody zimowe", to: "/ogrody-zimowe" },
   { text: "Inteligentny dom", to: "/inteligentny-dom" },
   { text: "Kontakt", to: "/kontakt" },
 ];

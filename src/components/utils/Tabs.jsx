@@ -33,7 +33,7 @@ const Tabs = ({ activeTab, setActiveTab }) => {
           {tabList.map((tab) => (
             <button
               key={tab.id}
-              className={`py-2 px-4 md:px-6 rounded-lg transition-all font-medium text-sm md:text-base whitespace-nowrap text-center ${
+              className={`py-2 px-4 md:px-6 rounded-sm transition-all font-medium text-sm md:text-base whitespace-nowrap text-center ${
                 activeTab === tab.id
                   ? "bg-gray-900 text-white shadow-lg"
                   : "bg-gray-200 text-gray-700 hover:bg-gray-300"
