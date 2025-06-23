@@ -18,7 +18,7 @@ const DoorsPage = () => {
     >
       <button
         onClick={goToWooden}
-        className="sticky top-32 left-0 w-72 bg-white/90 backdrop-blur flex flex-col items-center py-2 z-50 shadow-md"
+        className="sticky top-28 md:top-32 left-0 w-72 bg-white/90 backdrop-blur flex flex-col items-center py-2 z-50 shadow-md"
       >
         <span className="text-sm font-bold uppercase tracking-widest">
           Drzwi drewniane
